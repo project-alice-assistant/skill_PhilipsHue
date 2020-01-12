@@ -596,18 +596,16 @@ class Group:
 		if sceneId is None and sceneName is None:
 			raise SelectorError('Cannot get scene without id and/or name')
 
+
 		if sceneId is None:
-			for scene in self.bridge.scenes.values():
-				if scene.name != sceneName:
+			for sceneId in self.myScenes:
+				if self.bridge.scenes[sceneId].name.lower() != sceneName.lower():
 					continue
 
-				if scene.id not in self.myScenes:
-					raise NoSuchSceneInGroup
-
-				self.request(url=f'/{self.id}/action', method='PUT', data={'scene': scene.id})
+				self.request(url=f'/{self.id}/action', method='PUT', data={'scene': sceneId})
 				return
 
-			raise NoSuchScene
+			raise NoSuchSceneInGroup
 		else:
 			if sceneId not in self.bridge.scenes:
 				raise NoSuchScene

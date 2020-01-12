@@ -3,5 +3,10 @@
 		"defaultValue": "",
 		"dataType": "string",
 		"description": "Philips Hue bridge IP if known, otherwise it will be auto discovered if possible"
+	},
+	"matchLightWithDaytime": {
+		"defaultValue": false,
+		"datatype": "boolean",
+		"description": "Have your turned on lights change their scene automatically as the day advances."
 	}
 }
