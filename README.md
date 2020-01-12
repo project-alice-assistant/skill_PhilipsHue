@@ -11,7 +11,7 @@ wget http://skills.projectalice.ch/PhilipsHue \
 ### Desc
 Control your Philips Hue lamps
 
-- Version: 1.0.34
+- Version: 1.0.35
 - Author: Psycho
 - Maintainers:
   - Jierka
@@ -19,14 +19,3 @@ Control your Philips Hue lamps
 - Alice minimum Version: 1.0.0-a4
 - Conditions:
   - en
-
-
-Configuration
-=============
-
-`phueAutodiscoverFallback`:
- - type: `bool`
-
-`phueBridgeIp`:
- - type: `string`
-

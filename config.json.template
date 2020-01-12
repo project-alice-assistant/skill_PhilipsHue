@@ -6,7 +6,7 @@
 	},
 	"matchLightWithDaytime": {
 		"defaultValue": false,
-		"datatype": "boolean",
+		"dataType": "boolean",
 		"description": "Have your turned on lights change their scene automatically as the day advances."
 	}
 }

@@ -5,7 +5,6 @@ from core.base.model.AliceSkill import AliceSkill
 from core.base.model.Intent import Intent
 from core.commons import constants
 from core.dialog.model.DialogSession import DialogSession
-from core.util.Decorators import IfSetting
 from .models.PhueAPI import Bridge, LinkButtonNotPressed, NoPhueIP, NoSuchGroup, NoSuchLight, NoSuchScene, NoSuchSceneInGroup, PhueRegistrationError, UnauthorizedUser
 
 
@@ -111,8 +110,10 @@ class PhilipsHue(AliceSkill):
 		self._bridge.group(0).off()
 
 
-	#@IfSetting(settingName='matchLightWithDaytime', settingValue=True)
 	def onFullHour(self):
+		if not self.getConfig('matchLightWithDaytime'):
+			return
+
 		partOfTheDay = self.Commons.partOfTheDay().capitalize()
 		if partOfTheDay not in self._bridge.scenesByName:
 			return
