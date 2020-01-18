@@ -111,8 +111,8 @@
 			"utterances": [
 				"please lights off {everywhere:=>Room}",
 				"please turn off the {office:=>Room} light",
-				"turn the {office:=>bedroom} lights off",
-				"could you please turn the {office:=>bathroom} light off",
+				"turn the {office:=>Room} lights off",
+				"could you please turn the {office:=>Room} light off",
 				"light off {everywhere:=>Room}",
 				"lights off {everywhere:=>Room}",
 				"turn off the lights please",
@@ -269,14 +269,14 @@
 					"description": null,
 					"required": false,
 					"type": "LightScene",
-					"missingQuestion": "what scenery?"
+					"missingQuestion": ""
 				},
 				{
 					"name": "Room",
 					"description": null,
 					"required": false,
 					"type": "Room",
-					"missingQuestion": "which room?"
+					"missingQuestion": ""
 				}
 			]
 		}
