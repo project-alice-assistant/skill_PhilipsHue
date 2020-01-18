@@ -1,13 +1,13 @@
 {
 	"name": "PhilipsHue",
-	"version": "1.0.35",
+	"version": "1.0.36",
 	"author": "Psychokiller1888",
 	"maintainers": [
 		"Jierka",
 		"maxbachmann"
 	],
 	"desc": "Control your Philips Hue lamps",
-	"aliceMinVersion": "1.0.0-a4",
+	"aliceMinVersion": "1.0.0-a5",
 	"systemRequirements": [],
 	"pipRequirements": [],
 	"conditions": {

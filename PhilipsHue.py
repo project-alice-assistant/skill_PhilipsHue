@@ -50,7 +50,7 @@ class PhilipsHue(AliceSkill):
 			self.logInfo('No phueAPI.conf file in PhilipsHue skill directory')
 
 
-	def onStart(self) -> dict:
+	def onStart(self):
 		super().onStart()
 
 		self._bridge = Bridge(ip=self.getConfig('phueBridgeIp'), confFile=self._hueConfigFile)
@@ -59,7 +59,6 @@ class PhilipsHue(AliceSkill):
 			try:
 				if self._bridge.connect(autodiscover=not self.getAliceConfig('stayCompletlyOffline')):
 					self.logInfo('Connected to Philips Hue bridge')
-					return self.supportedIntents
 
 			except UnauthorizedUser:
 				try:
@@ -68,7 +67,6 @@ class PhilipsHue(AliceSkill):
 					self.logInfo('User is not authorized')
 					self.delayed = True
 					raise SkillStartDelayed(self.name)
-				return self.supportedIntents
 			except NoPhueIP:
 				raise SkillStartingFailed(skillName=self.name, error='Bridge IP not set and stay completly offline set to True, cannot auto discover Philips Hue bridge')
 		else:
