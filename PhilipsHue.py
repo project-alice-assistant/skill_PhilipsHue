@@ -31,11 +31,11 @@ class PhilipsHue(AliceSkill):
 		]
 
 		self._INTENT_ANSWER_PERCENT.dialogMapping = {
-			DialogState('whatPercentage'): self.dimLightsIntent
+			'whatPercentage': self.dimLightsIntent
 		}
 
 		self._INTENT_USER_ANSWER.dialogMapping = {
-			DialogState('whatScenery'): self.lightSceneIntent
+			'whatScenery': self.lightSceneIntent
 		}
 
 		# noinspection PyTypeChecker
