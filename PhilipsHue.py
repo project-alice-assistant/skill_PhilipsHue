@@ -88,7 +88,7 @@ class PhilipsHue(AliceSkill):
 			if self._bridgeConnectTries < 3:
 				self.say(text=self.randomTalk('pressBridgeButton'))
 				self._bridgeConnectTries += 1
-				selflogWarning('Bridge not registered, please press the bridge button, retry in 20 seconds')
+				self.logWarning('Bridge not registered, please press the bridge button, retry in 20 seconds')
 				time.sleep(20)
 				self._registerOnBridge()
 			else:
@@ -163,7 +163,7 @@ class PhilipsHue(AliceSkill):
 				except NoSuchSceneInGroup:
 					self._bridge.group(groupName=room).on()
 				except NoSuchGroup:
-					selflogWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+					self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 
 		if rooms:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
@@ -179,7 +179,7 @@ class PhilipsHue(AliceSkill):
 			try:
 				self._bridge.group(groupName=room).off()
 			except NoSuchGroup:
-				selflogWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 
 		if rooms:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
@@ -213,7 +213,7 @@ class PhilipsHue(AliceSkill):
 			except NoSuchSceneInGroup:
 				self.logInfo(f'Requested scene "{scene}" for group "{room}" does not exist on the Philips Hue bridge')
 			except NoSuchGroup:
-				selflogWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 
 		if not done:
 			self.endDialog(session.sessionId, text=self.randomTalk('sceneNotInThisRoom'))
@@ -245,7 +245,7 @@ class PhilipsHue(AliceSkill):
 					for lightId in group.lights:
 						self._bridge.light(lightId).on() if self._bridge.light(lightId).isOff else self._bridge.light(lightId).off()
 			except NoSuchGroup:
-				selflogWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 			except NoSuchLight:
 				pass
 
@@ -276,7 +276,7 @@ class PhilipsHue(AliceSkill):
 				for lightId in self._bridge.group(groupName=room).lights:
 					self._bridge.light(lightId).brightness = brightness
 			except NoSuchGroup:
-				selflogWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 
 		if rooms:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
@@ -291,9 +291,9 @@ class PhilipsHue(AliceSkill):
 				self._bridge.group(0).scene(sceneName=scene)
 				return
 		except NoSuchGroup:
-			selflogWarning(f'Requested group "{group}" does not exist on the Philips Hue bridge')
+			self.logWarning(f'Requested group "{group}" does not exist on the Philips Hue bridge')
 		except NoSuchScene:
-			selflogWarning(f'Requested scene "{scene}" does not exist on the Philips Hue bridge')
+			self.logWarning(f'Requested scene "{scene}" does not exist on the Philips Hue bridge')
 
 
 	def lightsOff(self, group: int = 0):
