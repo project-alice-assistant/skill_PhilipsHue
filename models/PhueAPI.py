@@ -341,8 +341,8 @@ class Light:
 	swversion: str
 	swconfigid: str = ''
 	productid: str = ''
-	id: int = None
-	bridge: Bridge = None
+	id: Optional[int] = None
+	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
 
 
@@ -494,18 +494,18 @@ class Light:
 
 @dataclass
 class Group:
-	name: str = None
+	name: Optional[str] = None
 	lights: list = field(default_factory=list)
 	sensors: list = field(default_factory=list)
-	type: str = None
+	type: Optional[str] = None
 	state: dict = field(default_factory=dict)
 	recycle: bool = False
 	action: dict = field(default_factory=dict)
-	clazz: str = None
+	clazz: Optional[str] = None
 	stream: dict = field(default_factory=dict)
 	locations: dict = field(default_factory=dict)
-	id: int = None
-	bridge: Bridge = None
+	id: Optional[int] = None
+	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
 
 
@@ -657,9 +657,9 @@ class Scene:
 	picture: str
 	lastupdated: str
 	version: int
-	group: str = None
-	id: str = None
-	bridge: Bridge = None
+	group: Optional[str] = None
+	id: Optional[str] = None
+	bridge: Optional[Bridge] = None
 
 	def init(self, sceneId: str, bridgeInstance: Bridge):
 		self.id = sceneId
