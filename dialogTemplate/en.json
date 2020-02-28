@@ -132,7 +132,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Room",
+					"type": "Alice/Room",
 					"missingQuestion": ""
 				}
 			]
@@ -157,7 +157,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Room",
+					"type": "Alice/Room",
 					"missingQuestion": ""
 				},
 				{
@@ -194,7 +194,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Room",
+					"type": "Alice/Room",
 					"missingQuestion": ""
 				}
 			]
@@ -227,7 +227,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Room",
+					"type": "Alice/Room",
 					"missingQuestion": "In which room?"
 				}
 			]
@@ -275,7 +275,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Room",
+					"type": "Alice/Room",
 					"missingQuestion": ""
 				}
 			]

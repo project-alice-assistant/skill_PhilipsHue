@@ -13,7 +13,7 @@ wget http://skills.projectalice.ch/PhilipsHue \
 ### Desc
 Control your Philips Hue lamps
 
-- Version: 1.1.3
+- Version: 1.1.5
 - Author: Psycho
 - Maintainers:
   - Jierka
