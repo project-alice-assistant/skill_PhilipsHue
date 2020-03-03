@@ -203,6 +203,9 @@ class Bridge(ProjectAliceObject):
 	def register(self, saveConnection: bool = True) -> bool:
 		try:
 			req = self.sendRequest(data={'devicetype': f'phueAPI#{self._deviceName}'}, method='POST')
+			if not req:
+				raise PhueRegistrationError
+
 			answer = req.json()
 			if self.errorReturned(answer):
 				raise LinkButtonNotPressed
@@ -598,7 +601,7 @@ class Group:
 		self.request(url=f'/{self.id}/action', method='PUT', data={'hue': value})
 
 
-	def scene(self, sceneId: str = None, sceneName: str = None):
+	def scene(self, sceneId: str = '', sceneName: str = ''):
 		if not sceneId and not sceneName:
 			raise SelectorError('Cannot get scene without id and/or name')
 
