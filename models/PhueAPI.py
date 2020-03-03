@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from json import JSONDecodeError
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict
 
 import requests
 from dataclasses import dataclass, field
@@ -30,7 +30,7 @@ class LightNotReachable(Exception): pass
 
 class Bridge(ProjectAliceObject):
 
-	def __init__(self, ip: str = None, deviceName: str = 'phuepython', username: str = None, confFile: Path = Path('phueAPI.json')):
+	def __init__(self, ip: str = None, deviceName: str = 'phuepython', username: str = '', confFile: Path = Path('phueAPI.json')):
 		super().__init__()
 		self._ip = ip
 		self._deviceName = deviceName
@@ -38,9 +38,9 @@ class Bridge(ProjectAliceObject):
 		self._username = username
 		self._connected = False
 
-		self._groups = dict()
-		self._lights = dict()
-		self._scenes = dict()
+		self._groups: Dict[int, Group] = dict()
+		self._lights: Dict[int, Light] = dict()
+		self._scenes: Dict[str, Scene] = dict()
 
 		conf = self.loadConfigFileData()
 		if conf:
@@ -235,7 +235,7 @@ class Bridge(ProjectAliceObject):
 		return self.sendRequest(url=url, data=data, method=method, silent=silent)
 
 
-	def sendRequest(self, url: str = None, data: dict = None, method: str = 'GET', silent: bool = False) -> Response:
+	def sendRequest(self, url: str = None, data: dict = None, method: str = 'GET', silent: bool = False) -> Optional[Response]:
 		data = data or dict()
 		url = url or '/api'
 		if not url.startswith('/api'):
@@ -247,7 +247,7 @@ class Bridge(ProjectAliceObject):
 		except Exception as e:
 			if not silent:
 				raise PhueRequestError(f'API request error: {e}')
-			pass
+			return None
 
 
 	def autodiscover(self):
@@ -341,8 +341,8 @@ class Light:
 	swversion: str
 	swconfigid: str = ''
 	productid: str = ''
-	id: Optional[int] = None
-	bridge: Optional[Bridge] = None
+	id: int = None
+	bridge: Bridge = None
 	myScenes: list = field(default_factory=list)
 
 
@@ -494,18 +494,18 @@ class Light:
 
 @dataclass
 class Group:
-	name: Optional[str] = None
+	name: str = None
 	lights: list = field(default_factory=list)
 	sensors: list = field(default_factory=list)
-	type: Optional[str] = None
+	type: str = None
 	state: dict = field(default_factory=dict)
 	recycle: bool = False
 	action: dict = field(default_factory=dict)
-	clazz: Optional[str] = None
+	clazz: str = None
 	stream: dict = field(default_factory=dict)
 	locations: dict = field(default_factory=dict)
-	id: Optional[int] = None
-	bridge: Optional[Bridge] = None
+	id: int = None
+	bridge: Bridge = None
 	myScenes: list = field(default_factory=list)
 
 
