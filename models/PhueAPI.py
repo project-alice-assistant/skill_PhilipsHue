@@ -60,11 +60,11 @@ class Bridge(ProjectAliceObject):
 		return self._lights
 
 
-	def light(self, lightId: int = None, lightName: str = None) -> Light:
-		if lightId is None and lightName is None:
+	def light(self, lightId: int = 0, lightName: str = '') -> Light:
+		if lightId == 0 and not lightName:
 			raise SelectorError('Cannot get light without id and/or name')
 
-		if lightId is None:
+		if lightId == 0:
 			for light in self._lights.values():
 				if light.name == lightName:
 					return light
@@ -85,11 +85,11 @@ class Bridge(ProjectAliceObject):
 		return {group.name: group for group in self._groups.values()}
 
 
-	def group(self, groupId: int = None, groupName: str = None) -> Group:
-		if groupId is None and groupName is None:
+	def group(self, groupId: int = 0, groupName: str = '') -> Group:
+		if groupId == 0 and not groupName:
 			raise SelectorError('Cannot get group without id and/or name')
 
-		if groupId is None:
+		if groupId == 0:
 			for group in self._groups.values():
 				if group.name == groupName:
 					return group
@@ -110,11 +110,11 @@ class Bridge(ProjectAliceObject):
 		return {scene.name: scene for name, scene in self._scenes.items()}
 
 
-	def scene(self, sceneId: str = None, sceneName: str = None) -> Scene:
-		if sceneId is None and sceneName is None:
+	def scene(self, sceneId: str = '', sceneName: str = '') -> Scene:
+		if not sceneId and not sceneName:
 			raise SelectorError('Cannot get scene without id and/or name')
 
-		if sceneId is None:
+		if not sceneId:
 			for scene in self._scenes.values():
 				if scene.name == sceneName:
 					return scene
@@ -175,6 +175,9 @@ class Bridge(ProjectAliceObject):
 				raise UnauthorizedUser
 
 			req = self.sendRequest(url=f'/{self._username}')
+			if not req:
+				raise OSError
+
 			answer = req.json()
 			if self.errorReturned(answer):
 				raise UnauthorizedUser
@@ -229,7 +232,7 @@ class Bridge(ProjectAliceObject):
 			return False
 
 
-	def sendAuthRequest(self, url: str, data: dict = None, method: str = 'GET', silent: bool = False) -> Response:
+	def sendAuthRequest(self, url: str, data: dict = None, method: str = 'GET', silent: bool = False) -> Optional[Response]:
 		if self._username not in url:
 			url = f'/{self._username}{"/" if not url.startswith("/") else ""}{url}'
 		return self.sendRequest(url=url, data=data, method=method, silent=silent)
@@ -276,44 +279,47 @@ class Bridge(ProjectAliceObject):
 		self._groups[0] = group
 
 		req = self.sendAuthRequest(url='/groups')
-		answer = req.json()
-		for groupId, data in answer.items():
-			if 'class' in data:
-				data['clazz'] = data.pop('class')
-			groupId = int(groupId)
-			group = Group(**data)
-			group.init(groupId, self)
-			self._groups[groupId] = group
+		if req:
+			answer = req.json()
+			for groupId, data in answer.items():
+				if 'class' in data:
+					data['clazz'] = data.pop('class')
+				groupId = int(groupId)
+				group = Group(**data)
+				group.init(groupId, self)
+				self._groups[groupId] = group
 
 		req = self.sendAuthRequest(url='/lights')
-		answer = req.json()
-		for lightId, data in answer.items():
-			lightId = int(lightId)
-			light = Light(**data)
-			light.init(lightId, self)
-			self._lights[lightId] = light
+		if req:
+			answer = req.json()
+			for lightId, data in answer.items():
+				lightId = int(lightId)
+				light = Light(**data)
+				light.init(lightId, self)
+				self._lights[lightId] = light
 
-		req = self.sendAuthRequest(url='/scenes')
-		answer = req.json()
-		for sceneId, data in answer.items():
-			scene = Scene(**data)
-			scene.init(sceneId, self)
-			self._scenes[sceneId] = scene
+		if req:
+			req = self.sendAuthRequest(url='/scenes')
+			answer = req.json()
+			for sceneId, data in answer.items():
+				scene = Scene(**data)
+				scene.init(sceneId, self)
+				self._scenes[sceneId] = scene
 
-			if not 'type' in data:
-				continue
+				if not 'type' in data:
+					continue
 
-			if data['type'] == 'GroupScene':
-				try:
-					self.group(int(data['group'])).myScenes.append(sceneId)
-				except NoSuchGroup:
-					pass
-			elif data['type'] == 'LightScene' and data['name'] != 'Last on state':
-				for lightId in data['lights']:
+				if data['type'] == 'GroupScene':
 					try:
-						self.light(int(lightId)).myScenes.append(sceneId)
-					except NoSuchLight:
+						self.group(int(data['group'])).myScenes.append(sceneId)
+					except NoSuchGroup:
 						pass
+				elif data['type'] == 'LightScene' and data['name'] != 'Last on state':
+					for lightId in data['lights']:
+						try:
+							self.light(int(lightId)).myScenes.append(sceneId)
+						except NoSuchLight:
+							pass
 
 
 	@staticmethod
@@ -341,8 +347,8 @@ class Light:
 	swversion: str
 	swconfigid: str = ''
 	productid: str = ''
-	id: int = None
-	bridge: Bridge = None
+	id: int = 0
+	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
 
 
@@ -486,7 +492,7 @@ class Light:
 
 
 	def request(self, url: str, data: dict = None, method: str = 'GET'):
-		if not self.reachable:
+		if not self.reachable or not self.bridge:
 			raise LightNotReachable
 
 		self.bridge.sendAuthRequest(url=f'/lights{"/" if not url.startswith("/") else ""}{url}', method=method, data=data)
@@ -494,18 +500,18 @@ class Light:
 
 @dataclass
 class Group:
-	name: str = None
+	name: str = ''
 	lights: list = field(default_factory=list)
 	sensors: list = field(default_factory=list)
-	type: str = None
+	type: str = ''
 	state: dict = field(default_factory=dict)
 	recycle: bool = False
 	action: dict = field(default_factory=dict)
-	clazz: str = None
+	clazz: str = ''
 	stream: dict = field(default_factory=dict)
 	locations: dict = field(default_factory=dict)
-	id: int = None
-	bridge: Bridge = None
+	id: int = 0
+	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
 
 
@@ -593,11 +599,14 @@ class Group:
 
 
 	def scene(self, sceneId: str = None, sceneName: str = None):
-		if sceneId is None and sceneName is None:
+		if not sceneId and not sceneName:
 			raise SelectorError('Cannot get scene without id and/or name')
 
+		if not self.bridge:
+			raise SelectorError('No bridge defined')
 
-		if sceneId is None:
+
+		if not sceneId:
 			for sceneId in self.myScenes:
 				if self.bridge.scenes[sceneId].name.lower() != sceneName.lower():
 					continue
@@ -641,7 +650,10 @@ class Group:
 		return False
 
 
-	def request(self, url: str, data: dict = None, method: str = 'GET') -> Response:
+	def request(self, url: str, data: dict = None, method: str = 'GET') -> Optional[Response]:
+		if not self.bridge:
+			return None
+
 		return self.bridge.sendAuthRequest(url=f'/groups{"/" if not url.startswith("/") else ""}{url}', method=method, data=data)
 
 
@@ -657,8 +669,8 @@ class Scene:
 	picture: str
 	lastupdated: str
 	version: int
-	group: Optional[str] = None
-	id: Optional[str] = None
+	group: Optional[str] = ''
+	id: Optional[str] = ''
 	bridge: Optional[Bridge] = None
 
 	def init(self, sceneId: str, bridgeInstance: Bridge):
