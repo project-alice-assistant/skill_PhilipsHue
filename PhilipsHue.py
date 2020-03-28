@@ -45,7 +45,7 @@ class PhilipsHue(AliceSkill):
 
 		super().__init__(self._INTENTS)
 
-		self._hueConfigFile = self.getResource(self.name, 'phueAPI.conf')
+		self._hueConfigFile = self.getResource('phueAPI.conf')
 		if not self._hueConfigFile.exists():
 			self.logInfo('No phueAPI.conf file in PhilipsHue skill directory')
 
