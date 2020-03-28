@@ -1,7 +1,7 @@
 {
 	"name": "PhilipsHue",
-	"version": "1.1.6",
-	"icon": "fab fa-battle-net",
+	"version": "1.1.7",
+	"icon": "far fa-lightbulb-on",
 	"category": "automation",
 	"author": "Psychokiller1888",
 	"maintainers": [
