@@ -13,20 +13,34 @@ from core.base.model.ProjectAliceObject import ProjectAliceObject
 from core.util.model.Logger import Logger
 
 
-class UnauthorizedUser(Exception): pass
-class LinkButtonNotPressed(Exception): pass
-class NoPhueIP(Exception): pass
-class NoPhueBridgeFound(Exception): pass
-class IPNotPhueBridge(Exception): pass
-class PhueRegistrationError(Exception): pass
-class PhueRequestError(Exception): pass
-class SelectorError(Exception): pass
-class NoSuchLight(Exception): pass
-class NoSuchGroup(Exception): pass
-class NoSuchScene(Exception): pass
-class NoSuchSceneInGroup(Exception): pass
-class NoSuchSceneInLight(Exception): pass
-class LightNotReachable(Exception): pass
+class UnauthorizedUser(Exception):
+	pass
+class LinkButtonNotPressed(Exception):
+	pass
+class NoPhueIP(Exception):
+	pass
+class NoPhueBridgeFound(Exception):
+	pass
+class IPNotPhueBridge(Exception):
+	pass
+class PhueRegistrationError(Exception):
+	pass
+class PhueRequestError(Exception):
+	pass
+class SelectorError(Exception):
+	pass
+class NoSuchLight(Exception):
+	pass
+class NoSuchGroup(Exception):
+	pass
+class NoSuchScene(Exception):
+	pass
+class NoSuchSceneInGroup(Exception):
+	pass
+class NoSuchSceneInLight(Exception):
+	pass
+class LightNotReachable(Exception):
+	pass
 
 
 class Bridge(ProjectAliceObject):
