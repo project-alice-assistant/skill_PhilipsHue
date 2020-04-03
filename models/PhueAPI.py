@@ -87,10 +87,7 @@ class Bridge(ProjectAliceObject):
 
 
 	def group(self, groupId: int = 0, groupName: str = '') -> Group:
-		if groupId == 0 and not groupName:
-			raise SelectorError('Cannot get group without id and/or name')
-
-		if groupId == 0:
+		if groupName:
 			for group in self._groups.values():
 				if group.name == groupName:
 					return group
