@@ -1,7 +1,7 @@
 {
 	"name": "PhilipsHue",
-	"version": "1.1.9",
-	"icon": "far fa-lightbulb-on",
+	"version": "1.1.10",
+	"icon": "far fa-lightbulb",
 	"category": "automation",
 	"author": "Psychokiller1888",
 	"maintainers": [
