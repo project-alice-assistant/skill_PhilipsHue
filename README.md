@@ -10,8 +10,8 @@ Control your Philips Hue lamps
 - Maintainers:
   - Jierka
   - maxbachmann
-	-	Fe3lApAcUt
+  - Fe3lApAcUt
 - Alice minimum Version: 1.0.0-a5
 - Languages:
   - en
-	-	de
+  - de
