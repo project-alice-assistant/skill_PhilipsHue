@@ -45,7 +45,7 @@ class PhilipsHue(AliceSkill):
 
 		super().__init__(self._INTENTS)
 
-		self._hueConfigFile = self.getResource(self.name, 'phueAPI.conf')
+		self._hueConfigFile = self.getResource('phueAPI.conf')
 		if not self._hueConfigFile.exists():
 			self.logInfo('No phueAPI.conf file in PhilipsHue skill directory')
 
@@ -127,7 +127,7 @@ class PhilipsHue(AliceSkill):
 
 
 	def _getRooms(self, session: DialogSession) -> list:
-		rooms = [slot.value['value'].capitalize() for slot in session.slotsAsObjects.get('Room', list())]
+		rooms = [slot.value['value'].lower() for slot in session.slotsAsObjects.get('Room', list())]
 		if not rooms:
 			rooms = [constants.DEFAULT_SITE_ID.lower()]
 
@@ -242,8 +242,8 @@ class PhilipsHue(AliceSkill):
 				try:
 					group.scene(sceneName=partOfTheDay)
 				except (NoSuchScene, NoSuchSceneInGroup):
-					for lightId in group.lights:
-						self._bridge.light(lightId).on() if self._bridge.light(lightId).isOff else self._bridge.light(lightId).off()
+					group.on()
+
 			except NoSuchGroup:
 				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 			except NoSuchLight:
@@ -273,8 +273,7 @@ class PhilipsHue(AliceSkill):
 				break
 
 			try:
-				for lightId in self._bridge.group(groupName=room).lights:
-					self._bridge.light(lightId).brightness = brightness
+				self._bridge.group(groupName=room).brightness = brightness
 			except NoSuchGroup:
 				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
 

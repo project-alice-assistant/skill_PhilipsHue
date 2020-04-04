@@ -10,28 +10,43 @@ from dataclasses import dataclass, field
 from requests import RequestException, Response
 
 from core.base.model.ProjectAliceObject import ProjectAliceObject
+from core.util.model.Logger import Logger
 
 
-class UnauthorizedUser(Exception): pass
-class LinkButtonNotPressed(Exception): pass
-class NoPhueIP(Exception): pass
-class NoPhueBridgeFound(Exception): pass
-class IPNotPhueBridge(Exception): pass
-class PhueRegistrationError(Exception): pass
-class PhueRequestError(Exception): pass
-class SelectorError(Exception): pass
-class NoSuchLight(Exception): pass
-class NoSuchGroup(Exception): pass
-class NoSuchScene(Exception): pass
-class NoSuchSceneInGroup(Exception): pass
-class NoSuchSceneInLight(Exception): pass
-class LightNotReachable(Exception): pass
+class UnauthorizedUser(Exception):
+	pass
+class LinkButtonNotPressed(Exception):
+	pass
+class NoPhueIP(Exception):
+	pass
+class NoPhueBridgeFound(Exception):
+	pass
+class IPNotPhueBridge(Exception):
+	pass
+class PhueRegistrationError(Exception):
+	pass
+class PhueRequestError(Exception):
+	pass
+class SelectorError(Exception):
+	pass
+class NoSuchLight(Exception):
+	pass
+class NoSuchGroup(Exception):
+	pass
+class NoSuchScene(Exception):
+	pass
+class NoSuchSceneInGroup(Exception):
+	pass
+class NoSuchSceneInLight(Exception):
+	pass
+class LightNotReachable(Exception):
+	pass
 
 
 class Bridge(ProjectAliceObject):
 
 	def __init__(self, ip: str = None, deviceName: str = 'phuepython', username: str = '', confFile: Path = Path('phueAPI.json')):
-		super().__init__()
+		super().__init__(prepend='[Phue API]')
 		self._ip = ip
 		self._deviceName = deviceName
 		self._confFile = confFile
@@ -86,10 +101,7 @@ class Bridge(ProjectAliceObject):
 
 
 	def group(self, groupId: int = 0, groupName: str = '') -> Group:
-		if groupId == 0 and not groupName:
-			raise SelectorError('Cannot get group without id and/or name')
-
-		if groupId == 0:
+		if groupName:
 			for group in self._groups.values():
 				if group.name == groupName:
 					return group
@@ -152,7 +164,7 @@ class Bridge(ProjectAliceObject):
 			with self._confFile.open() as fp:
 				return json.load(fp)
 		except Exception as e:
-			print(f'Error opening config file: {e}')
+			self.logError(f'Error opening config file: {e}')
 			return None
 
 
@@ -160,7 +172,8 @@ class Bridge(ProjectAliceObject):
 		try:
 			self._confFile.write_text(json.dumps({'ip': self._ip, 'username': self._username}))
 		except Exception as e:
-			print(f'Error saving config file: {e}')
+			self.logError(f'Error saving config file: {e}')
+			self.logError(f'Error saving config file: {e}')
 			return None
 
 
@@ -184,18 +197,18 @@ class Bridge(ProjectAliceObject):
 
 			self._connected = True
 		except OSError as e:
-			print(f'Bridge connection error: {e}')
+			self.logError(f'Bridge connection error: {e}')
 			return False
 		except (UnauthorizedUser, NoPhueIP, NoPhueBridgeFound):
 			raise
 		except Exception as e:
-			print(f'Something went wrong connecting to the bridge: {e}')
+			self.logError(f'Something went wrong connecting to the bridge: {e}')
 			return False
 
 		try:
 			self.loadDevices()
 		except Exception as e:
-			print(f'Something went wrong loading devices assigned to the bridge: {e}')
+			self.logError(f'Something went wrong loading devices assigned to the bridge: {e}')
 
 		return True
 
@@ -257,27 +270,27 @@ class Bridge(ProjectAliceObject):
 
 
 	def autodiscover(self):
-		print('Trying to autodiscover the bridge on the network')
+		self.logInfo('Trying to autodiscover the bridge on the network')
 		try:
 			request = requests.get('https://www.meethue.com/api/nupnp')
-			print('Obtained a list of potential devices')
+			self.logInfo('Obtained a list of potential devices')
 			for device in request.json():
-				print(f'Testing {device["internalipaddress"]}')
+				self.logInfo(f'Testing {device["internalipaddress"]}')
 				if self.isPhueBridge(device['internalipaddress']):
 					self._ip = device['internalipaddress']
 					self.saveConfigFile()
-					print(f'Found bridge at {self._ip}')
+					self.logInfo(f'Found bridge at {self._ip}')
 					return
 			raise NoPhueBridgeFound
 		except (RequestException, JSONDecodeError):
-			print('Something went wrong trying to discover the bridge on your network')
+			self.logError('Something went wrong trying to discover the bridge on your network')
 
 
 	def loadDevices(self):
 		# First add group 0, which is a special group containing all the lights
 		group = Group()
 		group.init(0, self)
-		group.name = 'Everywhere'
+		group.name = 'everywhere'
 		group.state = {'all_on': False, 'any_on': False}
 		self._groups[0] = group
 
@@ -353,11 +366,18 @@ class Light:
 	id: int = 0
 	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
+	logger: Optional[Logger] = None
 
 
 	def init(self, lightId: int, bridgeInstance: Bridge):
 		self.id = lightId
 		self.bridge = bridgeInstance
+		self.name = self.name.lower()
+		self.logger = Logger(prepend='[Phue Light]')
+
+
+	def __str__(self) -> str:
+		return f'Light id {self.id} named "{self.name}" of type {self.type}.'
 
 
 	def on(self):
@@ -474,12 +494,12 @@ class Light:
 	@colormode.setter
 	def colormode(self, mode: str):
 		if 'colormode' not in self.state:
-			print(f'Light {self.name} with id {self.id} does not support colormode changing')
+			self.logger.logWarning(f'Light {self.name} with id {self.id} does not support colormode changing')
 			return
 
 		if mode not in ('hs', 'xy', 'ct'):
 			mode = 'ct'
-			print('Invalid color mode specified. Allowed value are "hs", "ct", "xy"')
+			self.logger.logWarning('Invalid color mode specified. Allowed value are "hs", "ct", "xy"')
 
 		self.state['colormode'] = mode
 		self.request(url=f'/{self.id}/state', method='PUT', data={'colormode': mode})
@@ -525,13 +545,18 @@ class Group:
 	def init(self, groupId: int, bridgeInstance: Bridge):
 		self.id = groupId
 		self.bridge = bridgeInstance
+		self.name = self.name.lower()
 
 
 	def on(self):
+		self.state['any_on'] = True
+		self.state['all_on'] = True
 		self.request(url=f'/{self.id}/action', method='PUT', data={'on': True})
 
 
 	def off(self):
+		self.state['any_on'] = False
+		self.state['all_on'] = False
 		self.request(url=f'/{self.id}/action', method='PUT', data={'on': False})
 
 
@@ -543,6 +568,13 @@ class Group:
 	@property
 	def isOff(self) -> bool:
 		return not self.state['any_on']
+
+
+	def toggle(self):
+		if self.isOff:
+			self.on()
+		else:
+			self.off()
 
 
 	def alert(self, state: str = 'lselect'):
@@ -672,10 +704,17 @@ class Scene:
 	picture: str
 	lastupdated: str
 	version: int
+	image: str = ''
 	group: Optional[str] = ''
 	id: Optional[str] = ''
 	bridge: Optional[Bridge] = None
 
+
 	def init(self, sceneId: str, bridgeInstance: Bridge):
 		self.id = sceneId
 		self.bridge = bridgeInstance
+		self.name = self.name.lower()
+
+
+	def __str__(self) -> str:
+		return f'Scene id {self.id} named "{self.name}" with {len(self.lights)} lights'
