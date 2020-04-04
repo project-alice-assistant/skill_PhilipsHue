@@ -58,149 +58,149 @@
 					"value": "Sonnenuntergang Savanne",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Tropendämmerung",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Smaragd-Insel",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Bergbrise",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Fairfax",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Tropendämmerung",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Nordlichter",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Frühlingsblüten",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Goldener Teich",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Frühlingssee",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Rubinrotes Leuchten",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Mittsommersonne",
 					"synonyms": [
-            "Sommersonne"
-          ]
+						"Sommersonne"
+					]
 				},
-        {
+				{
 					"value": "Frostige Morgendämmerung",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Herbstgold",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Winterlicher Berg",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Wintersonnenwende",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Sonntagmorgen",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Morgendämmerung am Meer",
 					"synonyms": [
-            "Morgendämmerung"
-          ]
+						"Morgendämmerung"
+					]
 				},
-        {
+				{
 					"value": "Nebel über dem See",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Sundowner",
 					"synonyms": [
-            "Sonnenuntergang"
-          ]
+						"Sonnenuntergang"
+					]
 				},
-        {
+				{
 					"value": "Lake Placid",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Palm Beach",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Blaue Lagune",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Ibiza",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Honolulu",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Osaka",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Chinatown",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Soho",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Tokio",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Motown",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Galaxie",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Sternenlicht",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Blutmond",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Sternennebel",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Mondlicht",
 					"synonyms": []
 				},
-        {
+				{
 					"value": "Nordlichter",
 					"synonyms": []
 				}
@@ -541,10 +541,10 @@
 				"Setze die Szene auf {Energie tanken:=>Scene}",
 				"Setze die Lichtszene zu {Tageslicht:=>Scene}",
 				"Setze die Lichtszene auf {Tageslicht:=>Scene}",
-        "Lichtszene im {Wohnzimmer:=>Room} zu {Sundowner:=>Scene} bitte",
-        "Lichtszene im {Wohnzimmer:=>Room} zu {Sundowner:=>Scene}",
-        "Lichtszene in der {Küche:=>Room} zu {Energie tanken:=>Scene} bitte",
-        "Lichtszene in der {Küche:=>Room} zu {Energie tanken:=>Scene}"
+				"Lichtszene im {Wohnzimmer:=>Room} zu {Sundowner:=>Scene} bitte",
+				"Lichtszene im {Wohnzimmer:=>Room} zu {Sundowner:=>Scene}",
+				"Lichtszene in der {Küche:=>Room} zu {Energie tanken:=>Scene} bitte",
+				"Lichtszene in der {Küche:=>Room} zu {Energie tanken:=>Scene}"
 			],
 			"slots": [
 				{
