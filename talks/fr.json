@@ -69,12 +69,12 @@
 	"whatPercentage": [
 		"Bien sûr ! Quel pourcentage ?",
 		"Quel ratio souhaitez vous ?",
-    "Quel pourcentage préférez vous ?"
+    		"Quel pourcentage préférez vous ?"
     
 	],
 	"whatScenery": [
 		"Quel scénario ?",
 		"Pardon ? Quel scénario voulez vous ?",
-    "Oui ! Pour quel scénario ?"
+    		"Oui ! Pour quel scénario ?"
 	]
 }
