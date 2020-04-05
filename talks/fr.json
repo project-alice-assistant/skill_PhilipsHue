@@ -1,6 +1,6 @@
 {
 	"pressBridgeButton": [
-		"Appuis sur le bouton du pont Hue s'il te plait"
+		"Appuie sur le bouton du pont Hue s'il te plait"
 	],
 	"pressBridgeButtonConfirmation": [
 		"Le pont Hue est maintenant configuré"
@@ -10,7 +10,7 @@
 	],
 	"roomUnknown": {
 		"default": [
-			"Désolé, la chambre {} n'est pas équipé d'éclairage Hue",
+			"Désolé, la chambre {} n'est pas équipée d'éclairage Hue",
 			"Je ne peux pas, il n'y a pas d'éclairage Hue dans la chambre {}"
 		],
 		"short": [
@@ -19,8 +19,8 @@
 	},
 	"sceneUnknown": {
 		"default": [
-			"La scène \"{}\" est inconnue pour moi",
-			"Désolé, je ne peux pas faire cela, je ne connais pas l'ambiance {}"
+			"L'ambiance \"{}\" est inconnue pour moi",
+			"Désolée, je ne peux pas faire cela, je ne connais pas l'ambiance {}"
 		],
 		"short": [
 			"Je ne connais pas l'ambiance"
@@ -32,8 +32,8 @@
 	],
 	"cantSpecifyMoreThanOneScene": {
 		"default": [
-			"Désolé, tu ne peux pas spécifié plus d'une ambiance à la fois",
-			"Tu peux spécifié qu'une seule ambiance à la fois"
+			"Désolée, tu ne peux pas spécifier plus d'une ambiance à la fois",
+			"Tu peux spécifier qu'une seule ambiance à la fois"
 		],
 		"short": [
 			"Les ambiances simultanées ne sont pas supportées"
@@ -41,7 +41,7 @@
 	},
 	"lightBridgeFailure": {
 		"default": [
-			"Je suis désolé mais je n'ai pas trouvé le pont HUE, je ne peux pas controler vos éclairages",
+			"Je suis désolée mais je n'ai pas trouvé le pont HUE, je ne peux pas contrôler tes éclairages",
 			"Le pont HUE ne semble pas opérationnel, le contrôle de l'éclairage n'est pas possible"
 		],
 		"short": [
@@ -50,10 +50,10 @@
 	},
 	"lightBridgeNotRegistered": {
 		"default": [
-			"Rallume le pont HUE et appuis sur le bouton s'il te plait. Les éclairages ne sont pas connectés"
+			"Rallume le pont HUE et appuie sur le bouton s'il te plait. Les éclairages ne sont pas connectés"
 		],
 		"short": [
-			"Rallume le pont HUE et appuis sur le bouton"
+			"Rallume le pont HUE et appuie sur le bouton"
 		]
 	},
 	"sceneNotInThisRoom": {
@@ -68,10 +68,11 @@
 	},
 	"whatPercentage": [
 		"bien sûr ! A quel pourcentage ?",
-		"Quel pourcentage veux tu?"
+		"Quel pourcentage veux-tu ?"
 	],
 	"whatScenery": [
-		"Quelle scène?",
-		"Quelle scène souhaites tu?"
+		"Quelle scène ?",
+		"Quelle scène veux-tu ?",
+		"Quelle scène souhaites-tu ?"
 	]
 }
