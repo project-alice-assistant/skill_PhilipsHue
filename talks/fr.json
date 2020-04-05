@@ -1,0 +1,77 @@
+{
+	"pressBridgeButton": [
+		"Appuyez sur le boutton du pont Hue s'il vous plait"
+	],
+	"pressBridgeButtonConfirmation": [
+		"Le pont Hue est maintenant configuré"
+	],
+	"pressBridgeButtonTimeout": [
+		"Si vous n'appuyez pas sur le boutton du pont HUE, il ne sera pas configuré"
+	],
+	"roomUnknown": {
+		"default": [
+			"Désolé, la chambre {} n'est pas équipé d'éclairage Hue",
+			"Je ne peux pas, pas d'éclairage Hue dans la chambre {}"
+		],
+		"short": [
+			"Je ne peux pas, il n'y a pas d'éclairage HUE"
+		]
+	},
+	"sceneUnknown": {
+		"default": [
+			"La scène \"{}\" est inconnue pour moi",
+			"Désolé, je ne peux pas faire cela, je ne connais pas la scène {}"
+		],
+		"short": [
+			"Je ne connais pas la scène"
+		]
+	},
+	"confirm": [
+		"Ok!",
+		"Fait"
+	],
+	"cantSpecifyMoreThanOneScene": {
+		"default": [
+			"Désolé, vous ne pouvez pas spécifié plus d'une scène à la fois",
+			"Vous pouvez spécifié qu'une seule scène à la fois"
+		],
+		"short": [
+			"Les scènes simultanés ne sont pas supportées"
+		]
+	},
+	"lightBridgeFailure": {
+		"default": [
+			"Je suis désolé mais je n'ai pas trouvé le pont HUE, je ne peux pas controlé vos éclairages",
+			"Le pont HUE ne semble pas opérationnel, le contrôle de l'éclairage n'est pas possible"
+		],
+		"short": [
+			"Le pont HUE ne semble pas connecté"
+		]
+	},
+	"lightBridgeNotRegistered": {
+		"default": [
+			"Rallumez le pont HUE et appuyez sur le boutton s'il vous plait. Les éclairages ne sont pas connectés"
+		],
+		"short": [
+			"Rallumez le pont HUE et appuyez sur le boutton"
+		]
+	},
+	"sceneNotInThisRoom": {
+		"default": [
+			"Cette scène n'existe pas dans la chambre",
+			"Je ne peux pas trouver cette scène dans la chambre",
+			"Cette requête de scène n'existe pas dans la chambre"
+		],
+		"short": [
+			"Je ne connais pas cette scène"
+		]
+	},
+	"whatPercentage": [
+		"bien sûr ! A quel pourcentage ?",
+		"Quel pourcentage voulez vous?"
+	],
+	"whatScenery": [
+		"Quelle scène?",
+		"Quelle scène souhaitez vous?"
+	]
+}
