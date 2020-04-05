@@ -1,0 +1,80 @@
+{
+	"pressBridgeButton": [
+		"S'il vous plaît, appuyer sur le bouton du pont philips hue"
+	],
+	"pressBridgeButtonConfirmation": [
+		"Votre pont Philips Hue est maintenant configuré"
+	],
+	"pressBridgeButtonTimeout": [
+		"Vous n'avez pas appuyé sur le bouton, votre pont restera indisponible"
+	],
+	"roomUnknown": {
+		"default": [
+			"Pardon, la pièce {} n'est pas équipée de lampe connectées",
+			"Je ne peux pas, il n'y a pas de lampe connectée dans la {}"
+		],
+		"short": [
+			"Je ne peux pas, lampe inaccessible"
+		]
+	},
+	"sceneUnknown": {
+		"default": [
+			"Le scénario \"{}\" m'est inconnu",
+			"Désolé, je ne peux pas, je ne connais pas le scénario {}"
+		],
+		"short": [
+			"Je ne connais pas ce scénario"
+		]
+	},
+	"confirm": [
+		"Okay!",
+		"C'est bon"
+	],
+	"cantSpecifyMoreThanOneScene": {
+		"default": [
+			"Désolé, vous ne pouvez pas choisir plus d'un scénario à la fois",
+			"Vous ne pouvez activer qu'un scénario"
+		],
+		"short": [
+			"Les scénarios multiples ne sont pas supportés"
+		]
+	},
+	"lightBridgeFailure": {
+		"default": [
+			"Je suis désolé mais le pont n'a pas été trouvé, je ne peux pas contrôler votre lumière",
+			"Le pont a l'air étéint, le contrôle de la luminosité est impossible"
+		],
+		"short": [
+			"Le pont est déconnecté"
+		]
+	},
+	"lightBridgeNotRegistered": {
+		"default": [
+			"Redémarrez votre système et appuyer sur le bouton du pont. Vos lampes ne sont pas connectés"
+		],
+		"short": [
+			"Redémarrez et appuyer sur le bouton de votre pont Philips Hue"
+		]
+	},
+	"sceneNotInThisRoom": {
+		"default": [
+			"Ce scénario n'existe pas dans la pièce",
+			"Je ne trouve pas ce scénario dans cette pièce",
+			"Le scénario demandé n'exite pas"
+		],
+		"short": [
+			"Je ne connais pas ce scénario"
+		]
+	},
+	"whatPercentage": [
+		"Bien sûr ! Quel pourcentage ?",
+		"Quel ratio souhaitez vous ?",
+    "Quel pourcentage préférez vous ?"
+    
+	],
+	"whatScenery": [
+		"Quel scénario ?",
+		"Pardon ? Quel scénario voulez vous ?",
+    "Oui ! Pour quel scénario ?"
+	]
+}
