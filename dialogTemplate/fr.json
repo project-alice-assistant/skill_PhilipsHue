@@ -14,18 +14,19 @@
 					"synonyms": [
 						"regarder la télévision",
 						"regarder la télé",
-            "regarder un film",
-            "regarder une série",
-            "télé",
-            "télévision"
+            					"regarder un film",
+            					"regarder une série",
+						"regarder netflix",
+            					"télé",
+            					"télévision"
 					]
 				},
 				{
 					"value": "day light",
 					"synonyms": [
 						"lumière du jour",
-            "lumière naturelle",
-            "éclairage diurne"
+            					"lumière naturelle",
+            					"éclairage diurne"
 					]
 				},
 				{
@@ -33,136 +34,143 @@
 					"synonyms": [
 						"aller au lit",
 						"aller se coucher",
-						"aller dormir"
+						"se coucher",
+						"aller dormir",
+						"faire une sieste",
+						"dormir"
 					]
 				},
 				{
 					"value": "waking up",
 					"synonyms": [
 						"se lever",
-            "debout",
-            "réveil"
+            					"debout",
+            					"réveil",
+						"réveiller"
 					]
 				},
 				{
 					"value": "relax",
 					"synonyms": [
-            "cool",
-            "détente",
-            "reposer",
-            "repos",
-            "détendre"
-          ]
+            					"cool",
+						"être cool",
+            					"détente",
+            					"reposer",
+            					"repos",
+            					"détendre",
+						"relaxer"
+          				]
 				},
 				{
 					"value": "read",
 					"synonyms": [
-            "lire",
-            "lecture"
-          ]
+		            			"lire",
+            					"lecture"
+          				]
 				},
 				{
 					"value": "concentrate",
 					"synonyms": [
-            "se concentrer",
-            "concentration",
-            "meditation",
-            "travailler"
-          ]
+            					"se concentrer",
+            					"concentration",
+            					"mediter",
+            					"travailler"
+          				]
 				},
 				{
 					"value": "energize",
 					"synonyms": [
-            "énergique",
-            "dynamique",
-            "pêchue",
-            "motivation",
-            "motiver"
-          ]
+            					"énergique",
+						"dynamique",
+            					"pêchue",
+            					"motivation",
+            					"motiver"
+          				]
 				},
 				{
 					"value": "eating",
 					"synonyms": [
-            "manger",
-            "à table",
-            "repas",
-            "dîner",
-            "déjeuner",
-            "petit-déjeuner"
-          ]
+            					"manger",
+            					"à table",
+            					"repas",
+            					"dîner",
+            					"déjeuner",
+            					"petit-déjeuner",
+						"goûter"
+          				]
 				},
 				{
 					"value": "bright",
 					"synonyms": [
-            "éclatante",
-            "éclatant",
-            "brillant",
-            "brillante",
-            "resplendissante",
-            "resplendissant",
-            "lumineuse",
-            "lumineux"
-          ]
+						"éclatante",
+						"éclatant",
+						"brillant",
+						"brillante",
+						"resplendissante",
+						"resplendissant",
+						"lumineuse",
+						"lumineux"
+					]
 				},
 				{
 					"value": "dimmed",
 					"synonyms": [
-            "obscure",
-            "sombre"
-          ]
+						"obscure",
+						"sombre"
+					]
 				},
 				{
 					"value": "nightlight",
 					"synonyms": [
 						"éclairage nocturne",
-            "nocturne",
-            "éclairage de nuit"
+						"nocturne",
+						"éclairage de nuit"
 					]
 				},
 				{
 					"value": "evening",
 					"synonyms": [
-            "soir"
-          ]
+						"soir"
+					]
 				},
 				{
 					"value": "makeup",
 					"synonyms": [
 						"maquillage",
-            "maquiller"
+						"maquiller"
 					]
 				},
 				{
 					"value": "early morning",
-					  "synonyms": [
-            "aube"
-          ]
+					"synonyms": [
+						"aube"
+					]
 				},
 				{
 					"value": "morning",
 					"synonyms": [
-            "matin"
-          ]
+						"matin"
+					]
 				},
 				{
 					"value": "afternoon",
 					"synonyms": [
-            "aprem",
-            "après midi"
-          ]
+						"aprem",
+						"après midi"
+					]
 				},
 				{
 					"value": "night",
 					"synonyms": ["
-            "nuit"
-          ]
+						"nuit"
+					]
 				},
 				{
 					"value": "sleeping",
 					"synonyms": [
-            "dormir",
-            "dors"
-          ]
+						"dormir",
+						"dors"
+					]
 				}
 			]
 		}
@@ -173,23 +181,31 @@
 			"description": "Turns off a light",
 			"enabledByDefault": true,
 			"utterances": [
-				"please lights off {everywhere:=>Room}",
-				"please turn off the {office:=>Room} light",
-				"turn the {office:=>Room} lights off",
-				"could you please turn the {office:=>Room} light off",
-				"light off {everywhere:=>Room}",
-				"lights off {everywhere:=>Room}",
-				"turn off the lights please",
-				"turn off the lights",
-				"lights off",
-				"lights off please",
-				"please turn off the lights in the {kitchen:=>Room}",
-				"light off in the {kitchen:=>Room}",
-				"turn off the lights in the {kitchen:=>Room}",
-				"some darkness in the {kitchen:=>Room} please",
-				"please turn off the light in the {kitchen:=>Room}",
-				"lights off in the {kitchen:=>Room}",
-				"turn off the light in the {kitchen:=>Room}"
+				"éteins toutes {everywhere:=>Room} les lumières",
+				"éteins la lumière de la {office:=>Room}",
+				"éteins la lumière du {office:=>Room}",
+				"éteins la lumière des {office:=>Room}",
+				"éteins {office:=>Room}",
+				"éteins le {office:=>Room}",
+				"éteins la {office:=>Room}",
+				"éteins les {office:=>Room}",
+				"Peux-tu éteindre le {office:=>Room}",
+				"Peux tu éteindre la {office:=>Room}",
+				"Peux tu éteindre les {office:=>Room}",
+				"éteins tout {everywhere:=>Room}",
+				"éteins {everywhere:=>Room}",
+				"éteins les lumières s'il te plaît",
+				"éteins les lumières",
+				"éteins",
+				"éteins s'il te plaît",
+				"merci d'éteindre",
+				"Peux tu éteindre",
+				"éteins les lumières dans la {kitchen:=>Room}",
+				"éteins les lumières dans le {office:=>Room}",
+				"éteins la {kitchen:=>Room}",
+				"éteins la lumière dans la {kitchen:=>Room}",
+				"fait le noir {kitchen:=>Room}",
+				"merci d'éteindre la lumière dans la {kitchen:=>Room}"
 			],
 			"slots": [
 				{
@@ -206,15 +222,24 @@
 			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
-				"set to {50%:=>Percent} the lights in the {kitchen:=>Room}",
-				"please set the lights in the {kitchen:=>Room} to {50%:=>Percent}",
-				"dim the light {everywhere:=>Room} to {50 percent:=>Percent}",
-				"please dim the lights to {25%:=>Percent}",
-				"dim the lights in the {kitchen:=>Room} to {25%:=>Percent}",
-				"dim the lights in the {bedroom:=>Room}",
-				"dim the lights to {25 percent:=>Percent}",
-				"please dim the lights",
-				"dim the lights"
+				"Mets à {50%:=>Percent} la lumière de la {kitchen:=>Room}",
+				"Mets à {50%:=>Percent} la lumière du {office:=>Room}",
+				"s'il te plaît mets la lumière dans la {kitchen:=>Room} à {50%:=>Percent}",
+				"Assombri {everywhere:=>Room} toutes les lumières à {50 percent:=>Percent}",
+				"S'il te plaît diminue la luminosité à {25%:=>Percent}",
+				"Diminue la luminosité à {25%:=>Percent}",
+				"Change la luminosité à {25%:=>Percent}",
+				"Réduit la lumière de la {kitchen:=>Room} à {25%:=>Percent}",
+				"Diminue la lumière de la {kitchen:=>Room} à {25%:=>Percent}",
+				"Diminue la lumière de la {bedroom:=>Room}",
+				"Diminue à {25 percent:=>Percent}",
+				"Change à {25 percent:=>Percent}",
+				"s'il te plaît diminue la luminosité",
+				"s'il te plaît réduit la luminosité
+				"s'il te plaît baisse la luminosité",
+				"s'il te plaît baisse la lumière",
+				"assombri l'éclairage",
+				"diminue l'éclairage"
 			],
 			"slots": [
 				{
@@ -238,20 +263,23 @@
 			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
-				"please lights {everywhere:=>Room}",
-				"lights {everywhere:=>Room} please",
-				"lights {everywhere:=>Room}",
-				"please light in the {bathroom:=>Room}",
-				"light in the {office:=>Room}",
-				"lights in the {office:=>Room} please",
-				"toggle lights in the {entrance:=>Room}",
-				"toggle the lights in the {kitchen:=>Room}",
-				"lights in the {kitchen:=>Room}",
-				"toggle the lights please",
-				"please toggle the lights",
-				"toggle the lights",
-				"lights please",
-				"please lights"
+				"S'il te plaît allume {everywhere:=>Room}",
+				"Allume {everywhere:=>Room} s'il te plaît",
+				"Illumine {everywhere:=>Room}",
+				"Allume {everywhere:=>Room}",
+				"Allume {everywhere:=>Room} s'il te plaît",
+				"s'il te plaît éclaire la {bathroom:=>Room}",
+				"Allume dans le {office:=>Room}",
+				"éclaire le {office:=>Room} s'il te plaît",
+				"Allume dans le {office:=>Room} s'il te plaît",
+				"Change la lumière dans {entrance:=>Room}",
+				"Change la lumière dans la {kitchen:=>Room}",
+				"Allume dans la {kitchen:=>Room}",
+				"Change la lumière s'il te plaît",
+				"Merci de changer la lumière",
+				"Change les lumières",
+				"Allume",
+				"S'il te plaît allume"
 			],
 			"slots": [
 				{
@@ -268,23 +296,25 @@
 			"description": "turns a light on",
 			"enabledByDefault": true,
 			"utterances": [
-				"light in the {office:=>Room}",
-				"please turn on the {office:=>Room} light",
-				"lights",
-				"turn on the lights {everywhere:=>Room}",
-				"please turn on the lights {everywhere:=>Room}",
-				"lights on {everywhere:=>Room}",
-				"please turn on the lights",
-				"turn on the lights please",
-				"turn on the lights",
-				"Light on in the {kitchen:=>Room} and {bathroom:=>Room}",
-				"Turn on the light in the {kitchen:=>Room}",
-				"Can I have light in the {kitchen:=>Room} please",
-				"Can I have light in the {kitchen:=>Room}",
-				"Illuminate the {kitchen:=>Room}",
-				"Please light the {kitchen:=>Room}",
-				"Lights on in the {kitchen:=>Room}",
-				"Turn on the lights in the {kitchen:=>Room}"
+				"Allume dans le {office:=>Room}",
+				"S'il te plaît allume la lumière du {office:=>Room}",
+				"Allume",
+				"Allume {everywhere:=>Room}",
+				"S'il te plaît allume les lumières {everywhere:=>Room}",
+				"éclaire {everywhere:=>Room}",
+				"s'il te plaît allume la lumière",
+				"Allume la lumière s'il te plaît",
+				"Allume la lumière",
+				"Allume dans la {kitchen:=>Room} et la {bathroom:=>Room}",
+				"Allume la lumière dans la {kitchen:=>Room}",
+				"Peux tu allumer la {kitchen:=>Room} s'il te plaît",
+				"Peux tu allumer la {kitchen:=>Room}",
+				"Peux tu éclairer la {kitchen:=>Room} s'il te plaît",
+				"Peux tu éclairer la {kitchen:=>Room}",
+				"Illumine la {kitchen:=>Room}",
+				"S'il te plaît éclaire la {kitchen:=>Room}",
+				"Allume la {kitchen:=>Room}",
+				"Mets la lumière dans la {kitchen:=>Room}"
 			],
 			"slots": [
 				{
@@ -301,31 +331,47 @@
 			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
-				"change the lights in the {bedroom:=>Room} to {going bed:=>Scene}",
-				"change the light in the {bedroom:=>Room} to {going bed:=>Scene}",
-				"set the light in the {living room:=>Room} to {watching tv:=>Scene}",
-				"set the lights in the {living room:=>Room} to {watching tv:=>Scene}",
-				"set the light to {energize:=>Scene} please",
-				"set the lights to {read:=>Scene}",
-				"change the light to {relax:=>Scene}",
-				"change the lights to {concentrate:=>Scene}",
-				"change the light to {going bed:=>Scene} in the {bedroom:=>Room}",
-				"set the lights to {watching tv:=>Scene} in the {living room:=>Room}",
-				"lights to {eating:=>Scene} in the {living room:=>Room}",
-				"set the lights to {relax:=>Scene}",
-				"lights in the {bedroom:=>Room} to {daylight:=>Scene}",
+				"Change la lumière dans la {bedroom:=>Room} pour aller {going bed:=>Scene}",
+				"Change la lumière de la {bedroom:=>Room} pour {going bed:=>Scene}",
+				"éclaire le {living room:=>Room} pour {watching tv:=>Scene}",
+				"Allume le {living room:=>Room} pour {watching tv:=>Scene}",
+				"Change le mode {energize:=>Scene} s'il te plaît",
+				"Change le mode {energize:=>Scene}",
+				"Change la lumière pour {read:=>Scene}",
+				"Change la lumière pour {relax:=>Scene}",
+				"Change la lumière pour {concentrate:=>Scene}",		
+				"Mode {read:=>Scene}",
+				"Mode {relax:=>Scene}",
+				"Mode {concentrate:=>Scene}",
+				"Mode {daylight:=>Scene}",
+				"Mets la lumière pour {read:=>Scene}",
+				"Mets la lumière pour {relax:=>Scene}",
+				"Mets la lumière pour {concentrate:=>Scene}",
+				"Mets la lumière pour {daylight:=>Scene}",
+				"Allume la lumière pour {read:=>Scene}",
+				"Allume la lumière pour {relax:=>Scene}",
+				"Allume la lumière pour {concentrate:=>Scene}",
+				"Allume la lumière pour {daylight:=>Scene}",
+				"Change la lumière pour {going bed:=>Scene} dans la {bedroom:=>Room}",
+				"Mets la lumière pour {going bed:=>Scene} dans la {bedroom:=>Room}",
+				"Mets la lumière pour {watching tv:=>Scene} dans le {living room:=>Room}",
+				"éclaire pour {eating:=>Scene} dans le {living room:=>Room}",
+				"allume pour {eating:=>Scene} dans le {living room:=>Room}",
+				"Allume la lumière pour {relax:=>Scene}",
+				"éclaire la {bedroom:=>Room} comme la {daylight:=>Scene}",
 				"change the lights to {going bed:=>Scene}",
-				"lights to {day light:=>Scene}",
-				"set the lights in the {kitchen:=>Room} to {day light:=>Scene}",
-				"set the {bedroom:=>Room} lights to {waking up:=>Scene}",
-				"set the {bedroom:=>Room} scene to {waking up:=>Scene}",
-				"set the {bedroom:=>Room} light scenery to {going bed:=>Scene}",
-				"change the lights in the {living room:=>Room} to {watching tv:=>Scene}",
-				"change the lighting to {watching tv:=>Scene}",
-				"please set the scenery to {watching tv:=>Scene}",
-				"set the scenery to {watching tv:=>Scene}",
-				"set the light scenery to {day light:=>Scene}",
-				"set the lights to {going bed:=>Scene}"
+				"Active {day light:=>Scene}",
+				"Allume la lumière dans la {kitchen:=>Room} comme {day light:=>Scene}",
+				"Allume la lumière dans la {bedroom:=>Room} comme {waking up:=>Scene}",
+				"Mets la {bedroom:=>Room} en mode {waking up:=>Scene}",
+				"Mets la {bedroom:=>Room} en mode {waking up:=>Scene}",
+				"Mets la lumière de la {bedroom:=>Room} pour {going bed:=>Scene}",
+				"Change la lumière dans le {living room:=>Room} pour {watching tv:=>Scene}",
+				"Change l'éclairage pour {watching tv:=>Scene}",
+				"S'il te plaît active le scénario {watching tv:=>Scene}",
+				"Mets le scénario {watching tv:=>Scene}",
+				"Mets la lumière dans le scénario {day light:=>Scene}",
+				"scénario {going bed:=>Scene}"
 			],
 			"slots": [
 				{
