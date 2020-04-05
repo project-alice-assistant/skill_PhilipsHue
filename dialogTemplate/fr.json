@@ -14,19 +14,19 @@
 					"synonyms": [
 						"regarder la télévision",
 						"regarder la télé",
-            "regarder un film",
-            "regarder une série",
+            			"regarder un film",
+            			"regarder une série",
 						"regarder netflix",
-            "télé",
-            "télévision"
+            			"télé",
+            			"télévision"
 					]
 				},
 				{
 					"value": "day light",
 					"synonyms": [
 						"lumière du jour",
-            "lumière naturelle",
-            "éclairage diurne"
+            			"lumière naturelle",
+            			"éclairage diurne"
 					]
 				},
 				{
@@ -44,132 +44,132 @@
 					"value": "waking up",
 					"synonyms": [
 						"se lever",
-            "debout",
-            "réveil",
+            			"debout",
+            			"réveil",
 						"réveiller"
 					]
 				},
 				{
 					"value": "relax",
 					"synonyms": [
-            "cool",
+            			"cool",
 						"être cool",
-            "détente",
-            "reposer",
-            "repos",
-            "détendre",
+            			"détente",
+            			"reposer",
+            			"repos",
+            			"détendre",
 						"relaxer"
-          ]
+          			]
 				},
 				{
 					"value": "read",
 					"synonyms": [
-            "lire",
-            "lecture"
-          ]
+            			"lire",
+            			"lecture"
+          			]
 				},
 				{
 					"value": "concentrate",
 					"synonyms": [
-            "se concentrer",
-            "concentration",
-            "mediter",
-            "travailler"
-          ]
+            			"se concentrer",
+            			"concentration",
+            			"mediter",
+            			"travailler"
+          			]
 				},
 				{
 					"value": "energize",
 					"synonyms": [
-            "énergique",
-            "dynamique",
-            "pêchue",
-            "motivation",
-            "motiver"
-          ]
+            			"énergique",
+						"dynamique",
+            			"pêchue",
+            			"motivation",
+            			"motiver"
+          			]
 				},
 				{
 					"value": "eating",
 					"synonyms": [
-            "manger",
-            "à table",
-            "repas",
-            "dîner",
-            "déjeuner",
-            "petit-déjeuner"
-          ]
+            			"manger",
+            			"à table",
+            			"repas",
+            			"dîner",
+            			"déjeuner",
+            			"petit-déjeuner"
+          			]
 				},
 				{
 					"value": "bright",
 					"synonyms": [
-            "éclatante",
-            "éclatant",
-            "brillant",
-            "brillante",
-            "resplendissante",
-            "resplendissant",
-            "lumineuse",
-            "lumineux"
-          ]
+						"éclatante",
+						"éclatant",
+						"brillant",
+						"brillante",
+						"resplendissante",
+						"resplendissant",
+						"lumineuse",
+						"lumineux"
+					]
 				},
 				{
 					"value": "dimmed",
 					"synonyms": [
-            "obscure",
-            "sombre"
-          ]
+						"obscure",
+						"sombre"
+					]
 				},
 				{
 					"value": "nightlight",
 					"synonyms": [
 						"éclairage nocturne",
-            "nocturne",
-            "éclairage de nuit"
+						"nocturne",
+						"éclairage de nuit"
 					]
 				},
 				{
 					"value": "evening",
 					"synonyms": [
-            "soir"
-          ]
+						"soir"
+					]
 				},
 				{
 					"value": "makeup",
 					"synonyms": [
 						"maquillage",
-            "maquiller"
+						"maquiller"
 					]
 				},
 				{
 					"value": "early morning",
-					  "synonyms": [
-            "aube"
-          ]
+					"synonyms": [
+						"aube"
+					]
 				},
 				{
 					"value": "morning",
 					"synonyms": [
-            "matin"
-          ]
+						"matin"
+					]
 				},
 				{
 					"value": "afternoon",
 					"synonyms": [
-            "aprem",
-            "après midi"
-          ]
+						"aprem",
+						"après midi"
+					]
 				},
 				{
 					"value": "night",
 					"synonyms": ["
-            "nuit"
-          ]
+						"nuit"
+					]
 				},
 				{
 					"value": "sleeping",
 					"synonyms": [
-            "dormir",
-            "dors"
-          ]
+						"dormir",
+						"dors"
+					]
 				}
 			]
 		}
