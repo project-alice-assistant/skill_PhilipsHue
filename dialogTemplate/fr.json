@@ -298,7 +298,6 @@
 				"Allume dans le {office:=>Room}",
 				"S'il te plaît allume la lumière du {office:=>Room}",
 				"Allume",
-				"Allume {everywhere:=>Room}",
 				"S'il te plaît allume les lumières {everywhere:=>Room}",
 				"éclaire {everywhere:=>Room}",
 				"s'il te plaît allume la lumière",
