@@ -161,7 +161,7 @@
 				},
 				{
 					"value": "night",
-					"synonyms": ["
+					"synonyms": [
 						"nuit"
 					]
 				},
@@ -235,7 +235,7 @@
 				"Diminue à {25 percent:=>Percent}",
 				"Change à {25 percent:=>Percent}",
 				"s'il te plaît diminue la luminosité",
-				"s'il te plaît réduit la luminosité
+				"s'il te plaît réduit la luminosité",
 				"s'il te plaît baisse la luminosité",
 				"s'il te plaît baisse la lumière",
 				"assombri l'éclairage",
