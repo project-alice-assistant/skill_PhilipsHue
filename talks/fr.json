@@ -1,12 +1,12 @@
 {
 	"pressBridgeButton": [
-		"S'il vous plaît, appuyer sur le bouton du pont philips hue"
+		"S'il te plaît, appuie sur le bouton du pont philips hue"
 	],
 	"pressBridgeButtonConfirmation": [
-		"Votre pont Philips Hue est maintenant configuré"
+		"Ton pont Philips Hue est maintenant configuré"
 	],
 	"pressBridgeButtonTimeout": [
-		"Vous n'avez pas appuyé sur le bouton, votre pont restera indisponible"
+		"Tu n'as pas appuyé sur le bouton, votre pont restera indisponible"
 	],
 	"roomUnknown": {
 		"default": [
@@ -32,8 +32,8 @@
 	],
 	"cantSpecifyMoreThanOneScene": {
 		"default": [
-			"Désolé, vous ne pouvez pas choisir plus d'un scénario à la fois",
-			"Vous ne pouvez activer qu'un scénario"
+			"Désolé, tu ne peux pas choisir plus d'un scénario à la fois",
+			"Tu ne peux activer qu'un scénario"
 		],
 		"short": [
 			"Les scénarios multiples ne sont pas supportés"
@@ -50,17 +50,17 @@
 	},
 	"lightBridgeNotRegistered": {
 		"default": [
-			"Redémarrez votre système et appuyer sur le bouton du pont. Vos lampes ne sont pas connectés"
+			"Redémarre ton système et appuye sur le bouton du pont. Tes lampes ne sont pas connectés"
 		],
 		"short": [
-			"Redémarrez et appuyer sur le bouton de votre pont Philips Hue"
+			"Redémarre et appuye sur le bouton de ton pont Philips Hue"
 		]
 	},
 	"sceneNotInThisRoom": {
 		"default": [
 			"Ce scénario n'existe pas dans la pièce",
 			"Je ne trouve pas ce scénario dans cette pièce",
-			"Le scénario demandé n'exite pas"
+			"Le scénario demandé n'existe pas"
 		],
 		"short": [
 			"Je ne connais pas ce scénario"
@@ -68,13 +68,13 @@
 	},
 	"whatPercentage": [
 		"Bien sûr ! Quel pourcentage ?",
-		"Quel ratio souhaitez vous ?",
-    		"Quel pourcentage préférez vous ?"
+		"Quel ratio souhaites tu ?",
+    		"Quel pourcentage préféres tu ?"
     
 	],
 	"whatScenery": [
 		"Quel scénario ?",
-		"Pardon ? Quel scénario voulez vous ?",
+		"Pardon ? Quel scénario veux tu ?",
     		"Oui ! Pour quel scénario ?"
 	]
 }
