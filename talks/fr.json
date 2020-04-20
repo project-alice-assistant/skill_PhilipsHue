@@ -1,80 +1,80 @@
 {
 	"pressBridgeButton": [
-		"S'il te plaît, appuie sur le bouton du pont philips hue"
+		"S'il te plaît, appuie sur le bouton du pont philips hue."
 	],
 	"pressBridgeButtonConfirmation": [
-		"Ton pont Philips Hue est maintenant configuré"
+		"Ton pont Philips Hue est maintenant configuré."
 	],
 	"pressBridgeButtonTimeout": [
-		"Tu n'as pas appuyé sur le bouton, votre pont restera indisponible"
+		"Tu n'as pas appuyé sur le bouton, ton pont restera indisponible."
 	],
 	"roomUnknown": {
 		"default": [
-			"Pardon, la pièce {} n'est pas équipée de lampe connectées",
-			"Je ne peux pas, il n'y a pas de lampe connectée dans la {}"
+			"Pardon, la pièce {} n'est pas équipée de lampe connectées.",
+			"Je ne peux pas, il n'y a pas de lampe connectée dans la {}."
 		],
 		"short": [
-			"Je ne peux pas, lampe inaccessible"
+			"Je ne peux pas, lampe inaccessible."
 		]
 	},
 	"sceneUnknown": {
 		"default": [
-			"Le scénario \"{}\" m'est inconnu",
-			"Désolé, je ne peux pas, je ne connais pas le scénario {}"
+			"Le scénario \"{}\" m'est inconnu.",
+			"Désolé, je ne peux pas, je ne connais pas le scénario {}."
 		],
 		"short": [
-			"Je ne connais pas ce scénario"
+			"Je ne connais pas ce scénario."
 		]
 	},
 	"confirm": [
 		"Okay!",
-		"C'est bon"
+		"C'est bon!"
 	],
 	"cantSpecifyMoreThanOneScene": {
 		"default": [
-			"Désolé, tu ne peux pas choisir plus d'un scénario à la fois",
-			"Tu ne peux activer qu'un scénario"
+			"Désolé, tu ne peux pas choisir plus d'un scénario à la fois.",
+			"Tu ne peux activer qu'un scénario."
 		],
 		"short": [
-			"Les scénarios multiples ne sont pas supportés"
+			"Les scénarios multiples ne sont pas supportés."
 		]
 	},
 	"lightBridgeFailure": {
 		"default": [
-			"Je suis désolé mais le pont n'a pas été trouvé, je ne peux pas contrôler votre lumière",
-			"Le pont a l'air étéint, le contrôle de la luminosité est impossible"
+			"Je suis désolé mais le pont n'a pas été trouvé, je ne peux pas contrôler ta lumière.",
+			"Le pont a l'air étéint, le contrôle de la luminosité est impossible."
 		],
 		"short": [
-			"Le pont est déconnecté"
+			"Le pont est déconnecté."
 		]
 	},
 	"lightBridgeNotRegistered": {
 		"default": [
-			"Redémarre ton système et appuye sur le bouton du pont. Tes lampes ne sont pas connectés"
+			"Redémarre ton système et appuie sur le bouton du pont. Tes lampes ne sont pas connectés."
 		],
 		"short": [
-			"Redémarre et appuye sur le bouton de ton pont Philips Hue"
+			"Redémarre et appuie sur le bouton de ton pont Philips Hue."
 		]
 	},
 	"sceneNotInThisRoom": {
 		"default": [
-			"Ce scénario n'existe pas dans la pièce",
-			"Je ne trouve pas ce scénario dans cette pièce",
-			"Le scénario demandé n'existe pas"
+			"Ce scénario n'existe pas dans la pièce.",
+			"Je ne trouve pas ce scénario dans cette pièce.",
+			"Le scénario demandé n'existe pas."
 		],
 		"short": [
-			"Je ne connais pas ce scénario"
+			"Je ne connais pas ce scénario."
 		]
 	},
 	"whatPercentage": [
-		"Bien sûr ! Quel pourcentage ?",
-		"Quel ratio souhaites tu ?",
-    		"Quel pourcentage préféres tu ?"
+		"Bien sûr! Quel pourcentage?",
+		"Quel ratio souhaites-tu?",
+    		"Quel pourcentage préféres-tu?"
     
 	],
 	"whatScenery": [
-		"Quel scénario ?",
-		"Pardon ? Quel scénario veux tu ?",
-    		"Oui ! Pour quel scénario ?"
+		"Quel scénario?",
+		"Pardon ? Quel scénario veux-tu?",
+    		"Oui! Pour quel scénario?"
 	]
 }
