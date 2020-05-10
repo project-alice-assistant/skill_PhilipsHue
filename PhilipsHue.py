@@ -129,7 +129,7 @@ class PhilipsHue(AliceSkill):
 	def _getRooms(self, session: DialogSession) -> list:
 		rooms = [slot.value['value'].lower() for slot in session.slotsAsObjects.get('Room', list())]
 		if not rooms:
-			rooms = [constants.DEFAULT_SITE_ID.lower()]
+			rooms = [self.getAliceConfig('deviceName').lower()]
 
 		return rooms if self._validateRooms(session, rooms) else list()
 

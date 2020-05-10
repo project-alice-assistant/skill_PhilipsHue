@@ -1,6 +1,6 @@
 {
 	"name": "PhilipsHue",
-	"version": "1.1.11",
+	"version": "1.1.12",
 	"icon": "far fa-lightbulb",
 	"category": "automation",
 	"author": "Psychokiller1888",
@@ -10,7 +10,7 @@
 		"Fe3lApAcUt"
 	],
 	"desc": "Control your Philips Hue lamps",
-	"aliceMinVersion": "1.0.0-a5",
+	"aliceMinVersion": "1.0.0-b1",
 	"systemRequirements": [],
 	"pipRequirements": [],
 	"conditions": {
