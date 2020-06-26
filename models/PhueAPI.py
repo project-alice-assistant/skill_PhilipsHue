@@ -380,7 +380,7 @@ class Light:
 		return f'Light id {self.id} named "{self.name}" of type {self.type}.'
 
 
-	def on(self):
+	def on(self): #NOSONAR
 		self.request(url=f'/{self.id}/state', method='PUT', data={'on': True})
 
 
@@ -462,14 +462,14 @@ class Light:
 
 
 	@property
-	def xy(self) -> list:
+	def xy(self) -> list: #NOSONAR
 		return self.state['xy']
 
 
 	@xy.setter
-	def xy(self, value: list):
-		x = sorted((0, value[0], 1))[1]
-		y = sorted((0, value[1], 1))[1]
+	def xy(self, value: list): #NOSONAR
+		x = sorted((0, value[0], 1))[1] #NOSONAR
+		y = sorted((0, value[1], 1))[1] #NOSONAR
 
 		self.state['xy'] = [x, y]
 		self.request(url=f'/{self.id}/state', method='PUT', data={'xy': value})
@@ -548,7 +548,7 @@ class Group:
 		self.name = self.name.lower()
 
 
-	def on(self):
+	def on(self): #NOSONAR
 		self.state['any_on'] = True
 		self.state['all_on'] = True
 		self.request(url=f'/{self.id}/action', method='PUT', data={'on': True})
