@@ -213,15 +213,15 @@
 			"description": "Turns off a light",
 			"enabledByDefault": true,
 			"utterances": [
-				"Bitte {überall:=>Room} Licht aus",
-				"Bitte schalte das {Büro:=>Room} Licht aus",
-				"Schalte das {Büro:=>Room} Licht aus",
-				"Kannst du bitte das Licht im {Büro:=>Room} ausschalten",
-				"Kannst du bitte das Licht in der {Küche:=>Room} ausschalten",
-				"Licht aus {überall:=>Room}",
-				"Lichter aus {überall:=>Room}",
-				"Licht {überall:=>Room} aus",
-				"Lichter {überall:=>Room} aus",
+				"Bitte {überall:=>Location} Licht aus",
+				"Bitte schalte das {Büro:=>Location} Licht aus",
+				"Schalte das {Büro:=>Location} Licht aus",
+				"Kannst du bitte das Licht im {Büro:=>Location} ausschalten",
+				"Kannst du bitte das Licht in der {Küche:=>Location} ausschalten",
+				"Licht aus {überall:=>Location}",
+				"Lichter aus {überall:=>Location}",
+				"Licht {überall:=>Location} aus",
+				"Lichter {überall:=>Location} aus",
 				"Schalte das Licht aus bitte",
 				"Schalte das Licht aus",
 				"Schalte das Licht ab bitte",
@@ -236,30 +236,30 @@
 				"Lichter aus",
 				"Licht aus bitte",
 				"Lichter aus bitte",
-				"Bitte schalte das Licht im {Büro:=>Room} aus",
-				"Bitte schalte das Licht in der {Küche:=>Room} aus",
-				"Bitte schalte die Lichter im {Büro:=>Room} aus",
-				"Bitte schalte die Lichter in der {Küche:=>Room} aus",
-				"Licht im {Büro:=>Room} aus",
-				"Licht in der {Küche:=>Room} aus",
-				"Lichter im {Büro:=>Room} aus",
-				"Lichter in der {Küche:=>Room} aus",
-				"Schalte das Licht im {Büro:=>Room} aus",
-				"Schalte das Licht in der {Küche:=>Room} aus",
-				"Schalte die Lichter im {Büro:=>Room} aus",
-				"Schalte die Lichter in der {Küche:=>Room} aus",
-				"Mach es im {Büro:=>Room} dunkel bitte",
-				"Mach es in der {Küche:=>Room} dunkel bitte",
-				"Bringe Dunkelheit über das {Büro:=>Room}",
-				"Bringe Dunkelheit über die {Küche:=>Room}",
-				"Bringe Dunkelheit über den {Badezimmer:=>Room}"
+				"Bitte schalte das Licht im {Büro:=>Location} aus",
+				"Bitte schalte das Licht in der {Küche:=>Location} aus",
+				"Bitte schalte die Lichter im {Büro:=>Location} aus",
+				"Bitte schalte die Lichter in der {Küche:=>Location} aus",
+				"Licht im {Büro:=>Location} aus",
+				"Licht in der {Küche:=>Location} aus",
+				"Lichter im {Büro:=>Location} aus",
+				"Lichter in der {Küche:=>Location} aus",
+				"Schalte das Licht im {Büro:=>Location} aus",
+				"Schalte das Licht in der {Küche:=>Location} aus",
+				"Schalte die Lichter im {Büro:=>Location} aus",
+				"Schalte die Lichter in der {Küche:=>Location} aus",
+				"Mach es im {Büro:=>Location} dunkel bitte",
+				"Mach es in der {Küche:=>Location} dunkel bitte",
+				"Bringe Dunkelheit über das {Büro:=>Location}",
+				"Bringe Dunkelheit über die {Küche:=>Location}",
+				"Bringe Dunkelheit über den {Badezimmer:=>Location}"
 			],
 			"slots": [
 				{
-					"name": "Room",
+					"name": "Location",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]
@@ -269,18 +269,18 @@
 			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
-				"Dimme das Licht {überall:=>Room} auf {50 Prozent:=>Percent} bitte",
-				"Dimme das Licht {überall:=>Room} auf {50 Prozent:=>Percent}",
-				"Dimme die Lichter {überall:=>Room} auf {50 Prozent:=>Percent} bitte",
-				"Dimme die Lichter {überall:=>Room} auf {50 Prozent:=>Percent}",
+				"Dimme das Licht {überall:=>Location} auf {50 Prozent:=>Percent} bitte",
+				"Dimme das Licht {überall:=>Location} auf {50 Prozent:=>Percent}",
+				"Dimme die Lichter {überall:=>Location} auf {50 Prozent:=>Percent} bitte",
+				"Dimme die Lichter {überall:=>Location} auf {50 Prozent:=>Percent}",
 				"Bitte dimme das Licht auf {25%:=>Percent}",
 				"Bitte dimme die Lichter auf {25%:=>Percent}",
 				"Dimme das Licht auf {25 Prozent:=>Percent} bitte",
 				"Dimme die Lichter auf {25 Prozent:=>Percent} bitte",
 				"Dimme das Licht auf {25 Prozent:=>Percent}",
 				"Dimme die Lichter auf {25 Prozent:=>Percent}",
-				"Dimme das Licht im {Büro:=>Room} auf {25 Prozent:=>Percent}",
-				"Dimme das Licht in der {Küche:=>Room} auf {25%:=>Percent}",
+				"Dimme das Licht im {Büro:=>Location} auf {25 Prozent:=>Percent}",
+				"Dimme das Licht in der {Küche:=>Location} auf {25%:=>Percent}",
 				"Dimme die Lichter im {Büro:=>Room} auf {25 Prozent:=>Percent} bitte",
 				"Dimme die Lichter in der {Küche:=>Room} auf {50%:=>Percent} bitte",
 				"Dimme die Lichter im {Büro:=>Room} auf {75%:=>Percent}",
@@ -323,7 +323,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				},
 				{
@@ -375,7 +375,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]
@@ -443,7 +443,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": "In which room?"
 				}
 			]
@@ -558,7 +558,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]

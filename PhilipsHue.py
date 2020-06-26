@@ -126,21 +126,21 @@ class PhilipsHue(AliceSkill):
 				self.logInfo(f'Scene {partOfTheDay} not found for group {group.name}, you should consider adding it')
 
 
-	def _getRooms(self, session: DialogSession) -> list:
-		rooms = [slot.value['value'].lower() for slot in session.slotsAsObjects.get('Room', list())]
-		if not rooms:
-			rooms = [self.getAliceConfig('deviceName').lower()]
+	def _getLocations(self, session: DialogSession) -> list:
+		locations = [slot.value['value'].lower() for slot in session.slotsAsObjects.get('Location', list())]
+		if not locations:
+			locations = [self.getAliceConfig('deviceName').lower()]
 
-		return rooms if self._validateRooms(session, rooms) else list()
+		return locations if self._validateLocations(session, locations) else list()
 
 
-	def _validateRooms(self, session: DialogSession, rooms: list) -> bool:
-		if constants.EVERYWHERE in rooms:
+	def _validateLocations(self, session: DialogSession, locations: list) -> bool:
+		if constants.EVERYWHERE in locations:
 			return True
 
-		for room in rooms:
-			if room not in self._bridge.groupsByName:
-				self.endDialog(sessionId=session.sessionId, text=self.randomTalk(text='roomUnknown', replace=[room]))
+		for location in locations:
+			if location not in self._bridge.groupsByName:
+				self.endDialog(sessionId=session.sessionId, text=self.randomTalk(text='roomUnknown', replace=[location]))
 				return False
 		return True
 
@@ -148,9 +148,9 @@ class PhilipsHue(AliceSkill):
 	def lightOnIntent(self, session: DialogSession):
 		partOfTheDay = self.Commons.partOfTheDay().capitalize()
 
-		rooms = self._getRooms(session)
-		for room in rooms:
-			if room == constants.EVERYWHERE:
+		locations = self._getLocations(session)
+		for location in locations:
+			if location == constants.EVERYWHERE:
 				try:
 					self._bridge.group(0).scene(sceneName=partOfTheDay)
 					break
@@ -158,30 +158,30 @@ class PhilipsHue(AliceSkill):
 					self._bridge.group(0).on()
 			else:
 				try:
-					self._bridge.group(groupName=room).scene(sceneName=partOfTheDay)
+					self._bridge.group(groupName=location).scene(sceneName=partOfTheDay)
 					break
 				except NoSuchSceneInGroup:
-					self._bridge.group(groupName=room).on()
+					self._bridge.group(groupName=location).on()
 				except NoSuchGroup:
-					self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+					self.logWarning(f'Requested group "{location}" does not exist on the Philips Hue bridge')
 
-		if rooms:
+		if locations:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
 
 
 	def lightOffIntent(self, session: DialogSession):
-		rooms = self._getRooms(session)
-		for room in rooms:
-			if room == constants.EVERYWHERE:
+		locations = self._getLocations(session)
+		for location in locations:
+			if location == constants.EVERYWHERE:
 				self._bridge.group(0).off()
 				break
 
 			try:
-				self._bridge.group(groupName=room).off()
+				self._bridge.group(groupName=location).off()
 			except NoSuchGroup:
-				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{location}" does not exist on the Philips Hue bridge')
 
-		if rooms:
+		if locations:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
 
 
@@ -192,7 +192,7 @@ class PhilipsHue(AliceSkill):
 		else:
 			scene = session.slotValue('Scene').lower()
 
-		rooms = self._getRooms(session)
+		locations = self._getLocations(session)
 		if not scene:
 			self.continueDialog(
 				sessionId=session.sessionId,
@@ -206,35 +206,35 @@ class PhilipsHue(AliceSkill):
 			return
 
 		done = False
-		for room in rooms:
+		for location in locations:
 			try:
-				self._bridge.group(groupName=room).scene(sceneName=scene)
+				self._bridge.group(groupName=location).scene(sceneName=scene)
 				done = True
 			except NoSuchSceneInGroup:
-				self.logInfo(f'Requested scene "{scene}" for group "{room}" does not exist on the Philips Hue bridge')
+				self.logInfo(f'Requested scene "{scene}" for group "{location}" does not exist on the Philips Hue bridge')
 			except NoSuchGroup:
-				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{location}" does not exist on the Philips Hue bridge')
 
 		if not done:
 			self.endDialog(session.sessionId, text=self.randomTalk('sceneNotInThisRoom'))
 			return
 
-		if rooms:
+		if locations:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
 
 
 	def manageLightsIntent(self, session: DialogSession):
 		partOfTheDay = self.Commons.partOfTheDay().capitalize()
 
-		rooms = self._getRooms(session)
-		for room in rooms:
-			if room == constants.EVERYWHERE:
+		locations = self._getLocations(session)
+		for location in locations:
+			if location == constants.EVERYWHERE:
 				group = self._bridge.group(0)
 				group.off() if group.isOn else group.on()
 				break
 
 			try:
-				group = self._bridge.group(groupName=room)
+				group = self._bridge.group(groupName=location)
 				if group.isOn:
 					group.off()
 					continue
@@ -245,11 +245,11 @@ class PhilipsHue(AliceSkill):
 					group.on()
 
 			except NoSuchGroup:
-				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{location}" does not exist on the Philips Hue bridge')
 			except NoSuchLight:
 				pass
 
-		if rooms:
+		if locations:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
 
 
@@ -266,18 +266,18 @@ class PhilipsHue(AliceSkill):
 		percentage = self.Commons.clamp(session.slotValue('Percent'), 0, 100)
 		brightness = int(round(254 / 100 * percentage))
 
-		rooms = self._getRooms(session)
-		for room in rooms:
-			if room == constants.EVERYWHERE:
+		locations = self._getLocations(session)
+		for location in locations:
+			if location == constants.EVERYWHERE:
 				self._bridge.group(0).brightness = brightness
 				break
 
 			try:
-				self._bridge.group(groupName=room).brightness = brightness
+				self._bridge.group(groupName=location).brightness = brightness
 			except NoSuchGroup:
-				self.logWarning(f'Requested group "{room}" does not exist on the Philips Hue bridge')
+				self.logWarning(f'Requested group "{location}" does not exist on the Philips Hue bridge')
 
-		if rooms:
+		if locations:
 			self.endDialog(session.sessionId, text=self.randomTalk('confirm'))
 
 

@@ -109,17 +109,17 @@
 			"description": "Turns off a light",
 			"enabledByDefault": true,
 			"utterances": [
-				"please lights off {everywhere:=>Room}",
-				"please turn off the {office:=>Room} light",
-				"turn the {office:=>Room} lights off",
-				"could you please turn the {office:=>Room} light off",
-				"light off {everywhere:=>Room}",
-				"lights off {everywhere:=>Room}",
+				"please lights off {everywhere:=>Location}",
+				"please turn off the {office:=>Location} light",
+				"turn the {office:=>Location} lights off",
+				"could you please turn the {office:=>Location} light off",
+				"light off {everywhere:=>Location}",
+				"lights off {everywhere:=>Location}",
 				"turn off the lights please",
 				"turn off the lights",
 				"lights off",
 				"lights off please",
-				"please turn off the lights in the {kitchen:=>Room}",
+				"please turn off the lights in the {kitchen:=>Location}",
 				"light off in the {kitchen:=>Room}",
 				"turn off the lights in the {kitchen:=>Room}",
 				"some darkness in the {kitchen:=>Room} please",
@@ -132,7 +132,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]
@@ -157,7 +157,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				},
 				{
@@ -194,7 +194,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]
@@ -227,7 +227,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": "In which room?"
 				}
 			]
@@ -275,7 +275,7 @@
 					"name": "Room",
 					"description": null,
 					"required": false,
-					"type": "Alice/Room",
+					"type": "Alice/Location",
 					"missingQuestion": ""
 				}
 			]
