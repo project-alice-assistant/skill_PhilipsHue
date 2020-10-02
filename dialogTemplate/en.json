@@ -1,7 +1,5 @@
 {
 	"skill": "PhilipsHue",
-	"icon": "lights",
-	"description": "Handle your Philips Hue lights from anywhere",
 	"slotTypes": [
 		{
 			"name": "LightScene",
@@ -106,7 +104,6 @@
 	"intents": [
 		{
 			"name": "PowerOffLights",
-			"description": "Turns off a light",
 			"enabledByDefault": true,
 			"utterances": [
 				"please lights off {everywhere:=>Location}",
@@ -139,7 +136,6 @@
 		},
 		{
 			"name": "DimLights",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"set to {50%:=>Percent} the lights in the {kitchen:=>Location}",
@@ -171,7 +167,6 @@
 		},
 		{
 			"name": "ManageLights",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"please lights {everywhere:=>Location}",
@@ -201,7 +196,6 @@
 		},
 		{
 			"name": "PowerOnLights",
-			"description": "turns a light on",
 			"enabledByDefault": true,
 			"utterances": [
 				"light in the {office:=>Location}",
@@ -234,7 +228,6 @@
 		},
 		{
 			"name": "SetLightsScene",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"change the lights in the {bedroom:=>Location} to {going bed:=>Scene}",

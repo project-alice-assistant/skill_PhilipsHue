@@ -1,7 +1,5 @@
 {
 	"skill": "PhilipsHue",
-	"icon": "lights",
-	"description": "Schalte deine Philips Hue Leuchten mit Alice",
 	"slotTypes": [
 		{
 			"name": "LightScene",
@@ -210,7 +208,6 @@
 	"intents": [
 		{
 			"name": "PowerOffLights",
-			"description": "Turns off a light",
 			"enabledByDefault": true,
 			"utterances": [
 				"Bitte {überall:=>Location} Licht aus",
@@ -266,7 +263,6 @@
 		},
 		{
 			"name": "DimLights",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"Dimme das Licht {überall:=>Location} auf {50 Prozent:=>Percent} bitte",
@@ -337,7 +333,6 @@
 		},
 		{
 			"name": "ManageLights",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"Bitte Licht {überall:=>Location}",
@@ -382,7 +377,6 @@
 		},
 		{
 			"name": "PowerOnLights",
-			"description": "turns a light on",
 			"enabledByDefault": true,
 			"utterances": [
 				"Licht im {Büro:=>Location}",
@@ -450,7 +444,6 @@
 		},
 		{
 			"name": "SetLightsScene",
-			"description": "",
 			"enabledByDefault": true,
 			"utterances": [
 				"Wechsel das Licht im {Büro:=>Location} zu {Lesen:=>Scene}",
