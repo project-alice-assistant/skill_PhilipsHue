@@ -254,7 +254,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": null,
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
@@ -317,14 +316,12 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": null,
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
 				},
 				{
 					"name": "Percent",
-					"description": null,
 					"required": false,
 					"type": "snips/percentage",
 					"missingQuestion": ""
@@ -368,7 +365,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": null,
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
@@ -435,7 +431,6 @@
 			"slots": [
 				{
 					"name": "Location",
-					"description": null,
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": "In which location?"
@@ -542,14 +537,12 @@
 			"slots": [
 				{
 					"name": "Scene",
-					"description": null,
 					"required": false,
 					"type": "LightScene",
 					"missingQuestion": ""
 				},
 				{
 					"name": "Location",
-					"description": null,
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
