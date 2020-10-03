@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from json import JSONDecodeError
 from pathlib import Path
-from typing import Optional, Dict
+from typing import Optional, Dict, Union
 
 import requests
 from dataclasses import dataclass, field
@@ -366,14 +366,13 @@ class Light:
 	id: int = 0
 	bridge: Optional[Bridge] = None
 	myScenes: list = field(default_factory=list)
-	logger: Optional[Logger] = None
+	logger: Logger = Logger(prepend='[Phue Light]')
 
 
 	def init(self, lightId: int, bridgeInstance: Bridge):
 		self.id = lightId
 		self.bridge = bridgeInstance
 		self.name = self.name.lower()
-		self.logger = Logger(prepend='[Phue Light]')
 
 
 	def __str__(self) -> str:
