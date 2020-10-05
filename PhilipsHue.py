@@ -15,8 +15,8 @@ class PhilipsHue(AliceSkill):
 	_INTENT_LIGHT_SCENE = Intent('SetLightsScene')
 	_INTENT_MANAGE_LIGHTS = Intent('ManageLights')
 	_INTENT_DIM_LIGHTS = Intent('DimLights')
-	_INTENT_ANSWER_PERCENT = Intent('AnswerPercent', isProtected=True)
-	_INTENT_USER_ANSWER = Intent('UserRandomAnswer', isProtected=True)
+	_INTENT_ANSWER_PERCENT = Intent('AnswerPercent')
+	_INTENT_USER_ANSWER = Intent('UserRandomAnswer')
 
 
 	def __init__(self):
