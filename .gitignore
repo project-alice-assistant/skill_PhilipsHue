@@ -1,2 +1,6 @@
 phueAPI.conf
 config.json
+
+scenarioNodes/node_modules/
+package-lock.json
+/__init__.py
