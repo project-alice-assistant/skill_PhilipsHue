@@ -237,6 +237,8 @@ class Bridge(ProjectAliceObject):
 
 	@staticmethod
 	def isPhueBridge(ip) -> bool:
+		if not ip:
+			return False
 		try:
 			req = requests.get(f'http://{ip}/api/config', timeout=2)
 			data = req.json()
