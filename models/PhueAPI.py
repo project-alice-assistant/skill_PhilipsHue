@@ -173,7 +173,6 @@ class Bridge(ProjectAliceObject):
 			self._confFile.write_text(json.dumps({'ip': self._ip, 'username': self._username}))
 		except Exception as e:
 			self.logError(f'Error saving config file: {e}')
-			self.logError(f'Error saving config file: {e}')
 			return None
 
 
@@ -274,7 +273,7 @@ class Bridge(ProjectAliceObject):
 	def autodiscover(self):
 		self.logInfo('Trying to autodiscover the bridge on the network')
 		try:
-			request = requests.get('https://www.meethue.com/api/nupnp')
+			request = requests.get('https://discovery.meethue.com/')
 			self.logInfo('Obtained a list of potential devices')
 			for device in request.json():
 				self.logInfo(f'Testing {device["internalipaddress"]}')
