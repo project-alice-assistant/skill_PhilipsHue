@@ -99,6 +99,20 @@
 					"synonyms": []
 				}
 			]
+		},
+		{
+			"name": "LightBrand",
+			"matchingStrictness": null,
+			"automaticallyExtensible": true,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "Phillips Hue",
+					"synonyms": [
+						"hue"
+					]
+				}
+			]
 		}
 	],
 	"intents": [
@@ -107,6 +121,13 @@
 			"enabledByDefault": true,
 			"utterances": [
 				"please lights off {everywhere:=>Location}",
+				"please lights off {hue:=>LightBrand} {everywhere:=>Location}",
+				"please turn off the {office:=>Location} {hue:=>LightBrand} light",
+				"turn the {office:=>Location} {Phillips Hue:=>LightBrand} lights off",
+				"{Phillips Hue:=>LightBrand} lights off {everywhere:=>Location}",
+				"{hue:=>LightBrand} Light off in the {kitchen:=>Location} and {bathroom:=>Location}",
+				"Can I have the {hue:=>LightBrand} light off in the {kitchen:=>Location} please",
+				"turn off the {hue:=>LightBrand} lights",
 				"please turn off the {office:=>Location} light",
 				"turn the {office:=>Location} lights off",
 				"could you please turn the {office:=>Location} light off",
@@ -130,6 +151,12 @@
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
+					"missingQuestion": ""
 				}
 			]
 		},
@@ -138,13 +165,19 @@
 			"enabledByDefault": true,
 			"utterances": [
 				"set to {50%:=>Percent} the lights in the {kitchen:=>Location}",
+				"set to {50%:=>Percent} the {hue:=>LightBrand} lights in the {kitchen:=>Location}",
 				"please set the lights in the {kitchen:=>Location} to {50%:=>Percent}",
+				"please set the {hue:=>LightBrand} lights in the {kitchen:=>Location} to {50%:=>Percent}",
 				"dim the light {everywhere:=>Location} to {50 percent:=>Percent}",
+				"dim the {hue:=>LightBrand} lights {everywhere:=>Location} to {50 percent:=>Percent}",
 				"please dim the lights to {25%:=>Percent}",
+				"please dim the {hue:=>LightBrand} lights to {25%:=>Percent}",
 				"dim the lights in the {kitchen:=>Location} to {25%:=>Percent}",
 				"dim the lights in the {bedroom:=>Location}",
+				"dim the {hue:=>LightBrand} lights in the {bedroom:=>Location}",
 				"dim the lights to {25 percent:=>Percent}",
 				"please dim the lights",
+				"please dim the {hue:=>LightBrand} lights",
 				"dim the lights"
 			],
 			"slots": [
@@ -159,6 +192,12 @@
 					"required": false,
 					"type": "snips/percentage",
 					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
+					"missingQuestion": ""
 				}
 			]
 		},
@@ -168,17 +207,22 @@
 			"utterances": [
 				"please lights {everywhere:=>Location}",
 				"lights {everywhere:=>Location} please",
+				"{hue:=>LightBrand} lights {everywhere:=>Location} please",
 				"lights {everywhere:=>Location}",
+				"{hue:=>LightBrand} lights {everywhere:=>Location}",
 				"please light in the {bathroom:=>Location}",
+				"toggle {hue:=>LightBrand} light in the {office:=>Location}",
 				"light in the {office:=>Location}",
 				"lights in the {office:=>Location} please",
 				"toggle lights in the {entrance:=>Location}",
 				"toggle the lights in the {kitchen:=>Location}",
 				"lights in the {kitchen:=>Location}",
 				"toggle the lights please",
+				"toggle the {hue:=>LightBrand} please",
 				"please toggle the lights",
 				"toggle the lights",
 				"lights please",
+				"{hue:=>LightBrand} lights please",
 				"please lights"
 			],
 			"slots": [
@@ -186,6 +230,12 @@
 					"name": "Location",
 					"required": false,
 					"type": "Alice/Location",
+					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
 					"missingQuestion": ""
 				}
 			]
@@ -197,6 +247,12 @@
 				"light in the {office:=>Location}",
 				"please turn on the {office:=>Location} light",
 				"lights",
+				"please turn on the {office:=>Location} {hue:=>LightBrand} light",
+				"turn the {office:=>Location} {Phillips Hue:=>LightBrand} lights on",
+				"{Phillips Hue:=>LightBrand} lights on {everywhere:=>Location}",
+				"turn on the {hue:=>LightBrand} lights",
+				"{hue:=>LightBrand} Light on in the {kitchen:=>Location} and {bathroom:=>Location}",
+				"Can I have the {hue:=>LightBrand} light in the {kitchen:=>Location} please",
 				"turn on the lights {everywhere:=>Location}",
 				"please turn on the lights {everywhere:=>Location}",
 				"lights on {everywhere:=>Location}",
@@ -210,7 +266,9 @@
 				"Illuminate the {kitchen:=>Location}",
 				"Please light the {kitchen:=>Location}",
 				"Lights on in the {kitchen:=>Location}",
-				"Turn on the lights in the {kitchen:=>Location}"
+				"{hue:=>LightBrand} Lights on in the {kitchen:=>Location}",
+				"Turn on the lights in the {kitchen:=>Location}",
+				"Turn on the {hue:=>LightBrand} lights in the {kitchen:=>Location}"
 			],
 			"slots": [
 				{
@@ -218,6 +276,12 @@
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": "In which location?"
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
+					"missingQuestion": ""
 				}
 			]
 		},
@@ -226,29 +290,37 @@
 			"enabledByDefault": true,
 			"utterances": [
 				"change the lights in the {bedroom:=>Location} to {going bed:=>Scene}",
+				"change the {hue:=>LightBrand} lights in the {bedroom:=>Location} to {going bed:=>Scene}",
 				"change the light in the {bedroom:=>Location} to {going bed:=>Scene}",
+				"change the {hue:=>LightBrand} light in the {bedroom:=>Location} to {going bed:=>Scene}",
 				"set the light in the {living room:=>Location} to {watching tv:=>Scene}",
+				"set the {hue:=>LightBrand} light in the {living room:=>Location} to {watching tv:=>Scene}",
 				"set the lights in the {living room:=>Location} to {watching tv:=>Scene}",
 				"set the light to {energize:=>Scene} please",
 				"set the lights to {read:=>Scene}",
+				"set the {hue:=>LightBrand} lights to {read:=>Scene}",
 				"change the light to {relax:=>Scene}",
+				"change the {hue:=>LightBrand} light to {relax:=>Scene}",
 				"change the lights to {concentrate:=>Scene}",
 				"change the light to {going bed:=>Scene} in the {bedroom:=>Location}",
 				"set the lights to {watching tv:=>Scene} in the {living room:=>Location}",
 				"lights to {eating:=>Scene} in the {living room:=>Location}",
 				"set the lights to {relax:=>Scene}",
 				"lights in the {bedroom:=>Location} to {daylight:=>Scene}",
+				"{hue:=>LightBrand} lights in the {bedroom:=>Location} to {daylight:=>Scene}",
 				"change the lights to {going bed:=>Scene}",
 				"lights to {day light:=>Scene}",
 				"set the lights in the {kitchen:=>Location} to {day light:=>Scene}",
 				"set the {bedroom:=>Location} lights to {waking up:=>Scene}",
 				"set the {bedroom:=>Location} scene to {waking up:=>Scene}",
+				"set the {bedroom:=>Location} {hue:=>LightBrand} scene to {waking up:=>Scene}",
 				"set the {bedroom:=>Location} light scenery to {going bed:=>Scene}",
 				"change the lights in the {living room:=>Location} to {watching tv:=>Scene}",
 				"change the lighting to {watching tv:=>Scene}",
 				"please set the scenery to {watching tv:=>Scene}",
 				"set the scenery to {watching tv:=>Scene}",
 				"set the light scenery to {day light:=>Scene}",
+				"set the {hue:=>LightBrand} light scenery to {day light:=>Scene}",
 				"set the lights to {going bed:=>Scene}"
 			],
 			"slots": [
@@ -262,6 +334,12 @@
 					"name": "Location",
 					"required": false,
 					"type": "Alice/Location",
+					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
 					"missingQuestion": ""
 				}
 			]
