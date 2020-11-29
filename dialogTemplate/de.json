@@ -203,6 +203,20 @@
 					"synonyms": []
 				}
 			]
+		},
+		{
+			"name": "LightBrand",
+			"matchingStrictness": null,
+			"automaticallyExtensible": true,
+			"useSynonyms": true,
+			"values": [
+				{
+					"value": "Phillips Hue",
+					"synonyms": [
+						"hue"
+					]
+				}
+			]
 		}
 	],
 	"intents": [
@@ -211,6 +225,13 @@
 			"enabledByDefault": true,
 			"utterances": [
 				"Bitte {überall:=>Location} Licht aus",
+				"please lights off {hue:=>LightBrand} {everywhere:=>Location}",
+				"please turn off the {office:=>Location} {hue:=>LightBrand} light",
+				"turn the {office:=>Location} {Phillips Hue:=>LightBrand} lights off",
+				"{Phillips Hue:=>LightBrand} lights off {everywhere:=>Location}",
+				"{hue:=>LightBrand} Light off in the {kitchen:=>Location} and {bathroom:=>Location}",
+				"Can I have the {hue:=>LightBrand} light off in the {kitchen:=>Location} please",
+				"turn off the {hue:=>LightBrand} lights",
 				"Bitte schalte das {Büro:=>Location} Licht aus",
 				"Schalte das {Büro:=>Location} Licht aus",
 				"Kannst du bitte das Licht im {Büro:=>Location} ausschalten",
@@ -256,6 +277,12 @@
 					"name": "Location",
 					"required": false,
 					"type": "Alice/Location",
+					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
 					"missingQuestion": ""
 				}
 			]
@@ -325,6 +352,12 @@
 					"required": false,
 					"type": "snips/percentage",
 					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
+					"missingQuestion": ""
 				}
 			]
 		},
@@ -367,6 +400,12 @@
 					"name": "Location",
 					"required": false,
 					"type": "Alice/Location",
+					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
 					"missingQuestion": ""
 				}
 			]
@@ -434,6 +473,12 @@
 					"required": false,
 					"type": "Alice/Location",
 					"missingQuestion": "In which location?"
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
+					"missingQuestion": ""
 				}
 			]
 		},
@@ -545,6 +590,12 @@
 					"name": "Location",
 					"required": false,
 					"type": "Alice/Location",
+					"missingQuestion": ""
+				},
+				{
+					"name": "LightBrand",
+					"required": false,
+					"type": "LightBrand",
 					"missingQuestion": ""
 				}
 			]
