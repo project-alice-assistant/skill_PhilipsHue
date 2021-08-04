@@ -1,16 +1,16 @@
 {
-	"name": "PhilipsHue",
-	"version": "1.1.24",
-	"icon": "far fa-lightbulb",
-	"category": "automation",
-	"author": "Psychokiller1888",
-	"maintainers": [
-		"Jierka",
-		"maxbachmann",
-		"Fe3lApAcUt",
-		"lazza"
-	],
-	"desc": "Control your Philips Hue lamps",
+    "name": "PhilipsHue",
+    "version": "1.1.25",
+    "icon": "far fa-lightbulb",
+    "category": "automation",
+    "author": "Psychokiller1888",
+    "maintainers": [
+        "Jierka",
+        "maxbachmann",
+        "Fe3lApAcUt",
+        "lazza"
+    ],
+    "desc": "Control your Philips Hue lamps",
     "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [],
     "pipRequirements": [],
