@@ -1,5 +1,6 @@
 phueAPI.conf
 config.json
+*.ext.json
 
 scenarioNodes/node_modules/
 package-lock.json
