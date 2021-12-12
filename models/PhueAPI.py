@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from json import JSONDecodeError
 from pathlib import Path
-from typing import Optional, Dict, Union
+from typing import Optional, Dict
 
 import requests
 from dataclasses import dataclass, field
@@ -424,6 +424,7 @@ class Light(object):
 		return self.state['bri']
 
 
+	# noinspection DuplicatedCode
 	@brightness.setter
 	def brightness(self, value: int):
 		if value == 0:
@@ -596,6 +597,7 @@ class Group(object):
 		return self.action['bri']
 
 
+	# noinspection DuplicatedCode
 	@brightness.setter
 	def brightness(self, value: int):
 		if value == 0:

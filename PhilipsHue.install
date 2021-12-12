@@ -14,7 +14,7 @@
     "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [],
     "pipRequirements": [
-	  'requests'
+	  "requests"
 	],
     "conditions": {
         "lang": [
