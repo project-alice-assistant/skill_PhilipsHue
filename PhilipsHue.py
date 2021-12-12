@@ -57,7 +57,7 @@ class PhilipsHue(AliceSkill):
 
 		if not self.delayed:
 			try:
-				if self._bridge.connect(autodiscover=not self.getAliceConfig('stayCompletlyOffline')):
+				if self._bridge.connect(autodiscover=not self.getAliceConfig('stayCompletelyOffline')):
 					self.logInfo('Connected to Philips Hue bridge')
 
 			except UnauthorizedUser:
@@ -68,7 +68,7 @@ class PhilipsHue(AliceSkill):
 					self.delayed = True
 					raise SkillStartDelayed(self.name)
 			except NoPhueIP:
-				raise SkillStartingFailed(skillName=self.name, error='Bridge IP not set and stay completly offline set to True, cannot auto discover Philips Hue bridge')
+				raise SkillStartingFailed(skillName=self.name, error='Bridge IP not set and stay completely offline set to True, cannot auto discover Philips Hue bridge')
 		else:
 			if not self.ThreadManager.isThreadAlive('PHUERegister'):
 				self.ThreadManager.newThread(name='PHUERegister', target=self._registerOnBridge)
@@ -105,6 +105,16 @@ class PhilipsHue(AliceSkill):
 
 
 	def onSleep(self):
+		if self.getConfig('goodNightTurnsOffEverything'):
+			self.everythingOff()
+
+
+	def onLeavingHome(self):
+		if self.getConfig('goingOutTurnsOffEverything'):
+			self.ThreadManager.doLater(interval=300, func=self.everythingOff)
+
+
+	def everythingOff(self):
 		self._bridge.group(0).off()
 
 
@@ -173,7 +183,7 @@ class PhilipsHue(AliceSkill):
 		locations = self._getLocations(session)
 		for location in locations:
 			if location == constants.EVERYWHERE:
-				self._bridge.group(0).off()
+				self.everythingOff()
 				break
 
 			try:

@@ -239,6 +239,7 @@ class Bridge(ProjectAliceObject):
 		if not ip:
 			return False
 		try:
+			# noinspection HttpUrlsUsage
 			req = requests.get(f'http://{ip}/api/config', timeout=2)
 			data = req.json()
 			if 'swversion' in data and 'bridgeid' in data:
@@ -262,6 +263,7 @@ class Bridge(ProjectAliceObject):
 			url = f'/api{"/" if not url.startswith("/") else ""}{url}'
 
 		try:
+			# noinspection HttpUrlsUsage
 			req = requests.request(method=method, url=f'http://{self._ip}{url}', data=json.dumps(data), timeout=2)
 			return req
 		except Exception as e:
@@ -350,7 +352,7 @@ class Bridge(ProjectAliceObject):
 
 
 @dataclass
-class Light:
+class Light(object):
 	state: dict
 	swupdate: dict
 	type: str
@@ -522,7 +524,7 @@ class Light:
 
 
 @dataclass
-class Group:
+class Group(object):
 	name: str = ''
 	lights: list = field(default_factory=list)
 	sensors: list = field(default_factory=list)
@@ -693,7 +695,7 @@ class Group:
 
 
 @dataclass
-class Scene:
+class Scene(object):
 	name: str
 	type: str
 	lights: list

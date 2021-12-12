@@ -1,14 +1,26 @@
 {
-	"phueBridgeIp": {
-		"defaultValue": "",
-		"dataType": "string",
-		"isSensitive": false,
-		"description": "Philips Hue bridge IP if known, otherwise it will be auto discovered if possible"
-	},
-	"matchLightWithDaytime": {
-		"defaultValue": false,
-		"dataType": "boolean",
-		"isSensitive": false,
-		"description": "Have your turned on lights change their scene automatically as the day advances."
-	}
+  "phueBridgeIp": {
+	"defaultValue": "",
+	"dataType": "string",
+	"isSensitive": false,
+	"description": "Philips Hue bridge IP if known, otherwise it will be auto discovered if possible"
+  },
+  "matchLightWithDaytime": {
+	"defaultValue": false,
+	"dataType": "boolean",
+	"isSensitive": false,
+	"description": "Have your turned on lights change their scene automatically as the day advances."
+  },
+  "goodNightTurnsOffEverything": {
+	"defaultValue": false,
+	"dataType": "boolean",
+	"isSensitive": false,
+	"description": "Say good night to Alice to turn off all your lights."
+  },
+  "goingOutTurnsOffEverything": {
+	"defaultValue": false,
+	"dataType": "boolean",
+	"isSensitive": false,
+	"description": "Tell Alice you are going out to turn off all your lights 5 minutes later."
+  }
 }
