@@ -27,8 +27,8 @@ jobs:
         run: |
           projectalice-sk validate
       - name: Install mypy
-          run: |
-            mypy install-types
+        run: |
+          mypy install-types
       - name: Mypi tests
         uses: jpetrucciani/mypy-check@master
         with:
