@@ -139,7 +139,7 @@ class PhilipsHue(AliceSkill):
 	def _getLocations(self, session: DialogSession) -> list:
 		locations = [slot.value['value'].lower() for slot in session.slotsAsObjects.get('Location', list())]
 		if not locations:
-			locations = [self.getAliceConfig('deviceName').lower()]
+			locations = [self.DeviceManager.getDevice(uid=session.deviceUid).getLocation().name.lower()]
 
 		return locations if self._validateLocations(session, locations) else list()
 
