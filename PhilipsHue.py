@@ -57,7 +57,7 @@ class PhilipsHue(AliceSkill):
 
 		if not self.delayed:
 			try:
-				if self._bridge.connect(autodiscover=not self.getAliceConfig('stayCompletelyOffline')):
+				if self._bridge.connect():
 					self.logInfo('Connected to Philips Hue bridge')
 
 			except UnauthorizedUser:

@@ -1,6 +1,6 @@
 {
     "name": "PhilipsHue",
-    "version": "1.1.29",
+    "version": "1.2.0",
     "icon": "far fa-lightbulb",
     "category": "automation",
     "author": "Psychokiller1888",
@@ -12,7 +12,8 @@
     "aliceMinVersion": "1.0.0-b3",
     "systemRequirements": [],
     "pipRequirements": [
-	  "requests"
+	  "requests",
+	  "discoverhue"
 	],
     "conditions": {
         "lang": [
