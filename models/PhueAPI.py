@@ -1,13 +1,14 @@
 from __future__ import annotations
 
+import discoverhue
 import json
-from json import JSONDecodeError
-from pathlib import Path
-from typing import Optional, Dict
-
+import re
 import requests
 from dataclasses import dataclass, field
+from json import JSONDecodeError
+from pathlib import Path
 from requests import RequestException, Response
+from typing import Dict, Optional
 
 from core.base.model.ProjectAliceObject import ProjectAliceObject
 from core.util.model.Logger import Logger
@@ -180,7 +181,8 @@ class Bridge(ProjectAliceObject):
 		try:
 			if not self._ip and autodiscover:
 				self.autodiscover()
-			elif not self._ip and not autodiscover:
+
+			if not self._ip:
 				raise NoPhueIP
 
 			if not self._username:
@@ -240,8 +242,10 @@ class Bridge(ProjectAliceObject):
 			return False
 		try:
 			# noinspection HttpUrlsUsage
+			print(ip)
 			req = requests.get(f'http://{ip}/api/config', timeout=2)
 			data = req.json()
+			print(data)
 			if 'swversion' in data and 'bridgeid' in data:
 				return True
 
@@ -275,15 +279,17 @@ class Bridge(ProjectAliceObject):
 	def autodiscover(self):
 		self.logInfo('Trying to autodiscover the bridge on the network')
 		try:
-			request = requests.get('https://discovery.meethue.com/')
-			self.logInfo('Obtained a list of potential devices')
-			for device in request.json():
-				self.logInfo(f'Testing {device["internalipaddress"]}')
-				if self.isPhueBridge(device['internalipaddress']):
-					self._ip = device['internalipaddress']
-					self.saveConfigFile()
-					self.logInfo(f'Found bridge at {self._ip}')
-					return
+			found = discoverhue.find_bridges()
+			for bridge in found:
+				match = re.search(r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})', found[bridge])
+				if match.group(0):
+					ip = match.group(0)
+					self.logInfo(f'Testing {ip}')
+					if self.isPhueBridge(ip):
+						self._ip = ip
+						self.saveConfigFile()
+						self.logInfo(f'Found bridge at {self._ip}')
+						return
 			raise NoPhueBridgeFound
 		except (RequestException, JSONDecodeError):
 			self.logError('Something went wrong trying to discover the bridge on your network')
